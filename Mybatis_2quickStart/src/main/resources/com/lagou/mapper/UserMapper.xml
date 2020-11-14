@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lagou.mapper.UserMapper">
+
+    <select id="findAll" resultType="simpleuser">
+            select * from User
+    </select>
+
+    <select id="findByIf" resultType="simpleuser" parameterType="simpleuser">
+            select * from User
+            <where>
+                <if test="id != null">
+                    id = #{id}
+                </if>
+                <if test="username != null">
+                    username = #{username}
+                </if>
+
+            </where>
+    </select>
+
+    <select id="findByIds" resultType="simpleuser" >
+        select * from User
+        <where>
+         <foreach collection="array" open="id in (" close=")" item="id"  separator=",">
+            #{id}
+         </foreach>
+        </where>
+    </select>
+
+    <insert id="insertUser" parameterType="simpleuser">
+
+        insert into user value (#{id},#{username})
+
+    </insert>
+
+    <delete id="deleteUser" parameterType="Integer">
+
+        delete from user where id = #{id}
+    </delete>
+
+    <update id="updateUser" parameterType="simpleuser">
+        update user set username = #{username} where id = #{id}
+    </update>
+
+
+
+</mapper>
