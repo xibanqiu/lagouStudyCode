@@ -3,9 +3,7 @@ package com.lagou.sqlSession;
 import com.lagou.pojo.Configuration;
 import com.lagou.pojo.MappedStatement;
 
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
+import java.lang.reflect.*;
 import java.util.List;
 import java.util.Map;
 
@@ -49,14 +47,21 @@ public class DefaultSqlSession implements  SqlSession{
 
         Object proxyInstance = Proxy.newProxyInstance(DefaultSqlSession.class.getClassLoader(), new Class[]{mapperClass}, new InvocationHandler() {
             @Override
-            public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
+            public Object invoke(Object o, Method method, Object[] args) throws Throwable {
 
                 String methodName = method.getName();
-                String name = method.getDeclaringClass().getName();
+                String className = method.getDeclaringClass().getName();
 
+                String statementId = className + "." +methodName;
 
+                Type genericReturnType = method.getGenericReturnType();
 
-                return null;
+                if (genericReturnType instanceof ParameterizedType){
+                    List<Object> objects = selectAll(statementId, args);
+                    return objects;
+                }
+
+                return selectOne(statementId, args);
             }
         });
 
