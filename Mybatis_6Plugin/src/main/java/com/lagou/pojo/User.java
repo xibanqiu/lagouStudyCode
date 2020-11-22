@@ -1,5 +1,6 @@
 package com.lagou.pojo;
 
+
 public class User {
 
     private int id;

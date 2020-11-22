@@ -15,9 +15,24 @@
     </typeAliases>
 
     <plugins>
+
+
+        <!--注意：分页助手的插件 配置在通用馆mapper之前 -->
+        <plugin interceptor="com.github.pagehelper.PageHelper">
+            <!--指定方言 -->
+            <property name="dialect" value="mysql"/>
+        </plugin>
+
         <plugin interceptor="com.lagou.plugin.MyPlugin">
             <property name="name" value="Tom"/>
         </plugin>
+
+        <!-- 通用mapper 的 插件 -->
+        <plugin interceptor="tk.mybatis.mapper.mapperhelper.MapperInterceptor">
+            <!-- 通用Mapper接口，多个通用接口用逗号隔开 -->
+            <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
+        </plugin>
+
     </plugins>
 
     <environments default="development">

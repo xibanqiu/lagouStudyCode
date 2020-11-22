@@ -24,9 +24,7 @@ public class DefaultSqlSession implements  SqlSession{
         if(list.size() == 1){
             return (T) list.get(0);
         }else {
-
             throw new RuntimeException("查询结果为空，或者返回值过多");
-
         }
 
     }
@@ -53,6 +51,18 @@ public class DefaultSqlSession implements  SqlSession{
                 String className = method.getDeclaringClass().getName();
 
                 String statementId = className + "." +methodName;
+
+                if (methodName.toLowerCase().contains("insert")){
+                    // 走insert 方法
+                }
+
+                if (methodName.toLowerCase().contains("delete")){
+                    // 走delete方法
+                }
+
+                if (methodName.toLowerCase().contains("update")){
+                    // 走update方法
+                }
 
                 Type genericReturnType = method.getGenericReturnType();
 

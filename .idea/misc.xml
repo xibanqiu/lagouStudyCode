@@ -3,12 +3,18 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/MybatisLite/pom.xml" />
-        <option value="$PROJECT_DIR$/MybatisLite_test/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis_2quickStart/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis_1Lite/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis_1Litetest/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis_3multiTable/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis_4Annotation/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis_5Cache/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis_6Plugin/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-3-master/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="false" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

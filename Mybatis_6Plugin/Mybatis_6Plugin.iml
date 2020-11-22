@@ -27,5 +27,9 @@
     <orderEntry type="library" name="Maven: org.mybatis.caches:mybatis-redis:1.0.0-beta2" level="project" />
     <orderEntry type="library" name="Maven: redis.clients:jedis:2.8.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.commons:commons-pool2:2.3" level="project" />
+    <orderEntry type="library" name="Maven: com.github.pagehelper:pagehelper:3.7.5" level="project" />
+    <orderEntry type="library" name="Maven: com.github.jsqlparser:jsqlparser:0.9.1" level="project" />
+    <orderEntry type="library" name="Maven: tk.mybatis:mapper:3.1.2" level="project" />
+    <orderEntry type="library" name="Maven: javax.persistence:persistence-api:1.0" level="project" />
   </component>
 </module>

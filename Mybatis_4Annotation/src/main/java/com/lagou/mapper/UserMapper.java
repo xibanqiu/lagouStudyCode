@@ -21,7 +21,7 @@ public interface UserMapper {
     public void deleteUser(Integer id);
 
     @Select("select * from user where id = #{id}")
-    public User selectUserById();
+    public User selectUserById(Integer integer);
 
 
     @Results({

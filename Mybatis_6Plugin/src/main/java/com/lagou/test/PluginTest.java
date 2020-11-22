@@ -15,6 +15,7 @@ import java.util.List;
 public class PluginTest {
 
 
+    // 自定义插件的设置
     @Test
     public void test() throws IOException {
 
@@ -33,5 +34,8 @@ public class PluginTest {
 
 
     }
+
+
+
 
 }
