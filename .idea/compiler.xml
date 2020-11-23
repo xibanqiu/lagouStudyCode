@@ -6,11 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Mybatis_4Annotation" />
+        <module name="Mybatis_3multiTable" />
+        <module name="Mybatis_2quickStart" />
         <module name="mybatis" />
+        <module name="Mybatis_6Plugin" />
+        <module name="Mybatis_1Litetest" />
+        <module name="Mybatis_5Cache" />
+        <module name="Mybatis_1Lite" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="mybatis" target="11" />
+      <module name="mybatis" target="1.8" />
       <module name="Mybatis_1Lite" target="1.8" />
       <module name="Mybatis_1Litetest" target="1.8" />
       <module name="Mybatis_2quickStart" target="1.8" />

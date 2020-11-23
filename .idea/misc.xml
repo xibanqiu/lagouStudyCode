@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="JavaScriptSettings">
-    <option name="languageLevel" value="ES6" />
-  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
+        <option value="$PROJECT_DIR$/Mybatis_2quickStart/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis_1Lite/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis_1Litetest/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis_3multiTable/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis_4Annotation/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis_5Cache/pom.xml" />
+        <option value="$PROJECT_DIR$/Mybatis_6Plugin/pom.xml" />
         <option value="$PROJECT_DIR$/mybatis-3-master/pom.xml" />
       </list>
     </option>
