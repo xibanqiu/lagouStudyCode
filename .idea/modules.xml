@@ -9,9 +9,11 @@
       <module fileurl="file://$PROJECT_DIR$/Mybatis_4Annotation/Mybatis_4Annotation.iml" filepath="$PROJECT_DIR$/Mybatis_4Annotation/Mybatis_4Annotation.iml" />
       <module fileurl="file://$PROJECT_DIR$/Mybatis_5Cache/Mybatis_5Cache.iml" filepath="$PROJECT_DIR$/Mybatis_5Cache/Mybatis_5Cache.iml" />
       <module fileurl="file://$PROJECT_DIR$/Mybatis_6Plugin/Mybatis_6Plugin.iml" filepath="$PROJECT_DIR$/Mybatis_6Plugin/Mybatis_6Plugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aSimpleWebDemo/aSimpleWebDemo.iml" filepath="$PROJECT_DIR$/aSimpleWebDemo/aSimpleWebDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/lagou-transfer/lagou-transfer.iml" filepath="$PROJECT_DIR$/lagou-transfer/lagou-transfer.iml" />
       <module fileurl="file://$PROJECT_DIR$/lagouStudyCode.iml" filepath="$PROJECT_DIR$/lagouStudyCode.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis-3-master/mybatis.iml" filepath="$PROJECT_DIR$/mybatis-3-master/mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springlite/springlite.iml" filepath="$PROJECT_DIR$/springlite/springlite.iml" />
     </modules>
   </component>
 </project>

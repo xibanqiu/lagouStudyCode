@@ -11,13 +11,16 @@
         <module name="Mybatis_2quickStart" />
         <module name="mybatis" />
         <module name="Mybatis_6Plugin" />
+        <module name="springlite" />
         <module name="Mybatis_1Litetest" />
         <module name="Mybatis_5Cache" />
+        <module name="aSimpleWebDemo" />
         <module name="Mybatis_1Lite" />
         <module name="lagou-transfer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="aSimpleWebDemo" target="11" />
       <module name="lagou-transfer" target="11" />
       <module name="mybatis" target="1.8" />
       <module name="Mybatis_1Lite" target="1.8" />
@@ -27,6 +30,7 @@
       <module name="Mybatis_4Annotation" target="1.8" />
       <module name="Mybatis_5Cache" target="1.8" />
       <module name="Mybatis_6Plugin" target="1.8" />
+      <module name="springlite" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

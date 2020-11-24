@@ -27,3 +27,7 @@ hs_err_pid*
 /lagou.iml
 
 
+/lagou-transfer/target/
+/aSimpleWebDemo/target/
+/springlite/target/
+/lagou-transfer/target/
