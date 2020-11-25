@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet(name = "transferServlet" , urlPatterns = "/transferServlet")
+@WebServlet(name = "transferServlet" , urlPatterns = "/transferServlet")  // 声明servlet
 public class TransferServlet extends HttpServlet {
 
     // 1 实例化 service 对象
@@ -35,6 +35,7 @@ public class TransferServlet extends HttpServlet {
         String moneyStr = req.getParameter("money");
         int money = Integer.parseInt(moneyStr);
 
+        // 声明一个 返回结果 处理类
         Result result = new Result();
 
         try{
@@ -49,8 +50,8 @@ public class TransferServlet extends HttpServlet {
 
         }
 
-        resp.setContentType("application/json;charset=utf-8");
-        resp.getWriter().print(JsonUtils.object2Json(result));
+        resp.setContentType("application/json;charset=utf-8");  // 设置返回的 数据类型
+        resp.getWriter().print(JsonUtils.object2Json(result));  // 调用工具类 。将返回结果处理类，转成json
 
 
 

@@ -1,10 +1,11 @@
 package com.lagou.pojo;
 
+// 对返回结果的封装
 public class Result {
 
 
-    private String status;
-    private String message;
+    private String status;  //状态码
+    private String message; //返回的信息
 
     @Override
     public String toString() {

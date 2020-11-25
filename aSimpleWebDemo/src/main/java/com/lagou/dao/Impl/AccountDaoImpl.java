@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 public class AccountDaoImpl implements AccountDao {
 
 
+    // 在接口 实现类中 实现根据 cardNo查询账户的方法
     @Override
     public Account queryAccountCardNo(String cardNo) throws Exception {
 
@@ -40,6 +41,7 @@ public class AccountDaoImpl implements AccountDao {
         return  account;
     }
 
+    // 在接口 实现类中 实现 根据 cardNo 修改 money 的方法
     @Override
     public int updateAccountByCardNo(Account account) throws Exception{
 

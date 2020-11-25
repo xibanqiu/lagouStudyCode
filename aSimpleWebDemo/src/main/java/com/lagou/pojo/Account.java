@@ -2,9 +2,9 @@ package com.lagou.pojo;
 
 public class Account {
 
-    String name;
-    String cardNo;
-    Integer money;
+    String name;    // 用户名
+    String cardNo;  // 账户金额
+    Integer money;  // 银行卡号
 
     @Override
     public String toString() {
