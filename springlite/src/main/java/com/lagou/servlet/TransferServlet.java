@@ -1,5 +1,6 @@
 package com.lagou.servlet;
 
+import com.lagou.factory.BeanFactory;
 import com.lagou.pojo.Result;
 import com.lagou.service.TransferService;
 import com.lagou.service.impl.TransferServiceImpl;
@@ -11,14 +12,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.lang.invoke.VarHandle;
 
 
 @WebServlet(name = "transferServlet" , urlPatterns = "/transferServlet")
 public class TransferServlet extends HttpServlet {
 
-    // 1 实例化 service 对象
-    private TransferService transferService = new TransferServiceImpl();
+    // 实例化 transferService 对象
+//    private TransferService transferService = new TransferServiceImpl();
 
+    // 使用工厂  实例化 transferService 对象
+    private TransferService transferService = (TransferService) BeanFactory.getBean("transferService");
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         this.doPost(req, resp);
@@ -51,9 +55,6 @@ public class TransferServlet extends HttpServlet {
 
         resp.setContentType("application/json;charset=utf-8");
         resp.getWriter().print(JsonUtils.object2Json(result));
-
-
-
 
     }
 }
