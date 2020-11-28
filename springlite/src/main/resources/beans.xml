@@ -4,6 +4,7 @@
     <bean id = "accountDao" class="com.lagou.dao.Impl.AccountDaoImpl"></bean>
 
     <bean id = "transferService" class="com.lagou.service.impl.TransferServiceImpl">
+        <!-- 这里加上一个 依赖的关系 -->
         <property name="AccountDao" ref="accountDao"> </property>
     </bean>
 

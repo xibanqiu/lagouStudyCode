@@ -5,6 +5,7 @@ import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
 import java.io.InputStream;
+import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -53,11 +54,26 @@ public class BeanFactory {
                 Element element = properties.get(i);
 
                 String ref = element.attributeValue("ref");
-                String classStr = element.attributeValue("class");
-
-                
+                String name = element.attributeValue("name");
 
 
+                String parentId = element.getParent().attributeValue("id");
+
+                Object  parentObj= map.get(parentId);
+
+                Method[] methods = parentObj.getClass().getMethods();
+                for (int j = 0; j < methods.length; j++) {
+
+                    Method method = methods[j];
+
+                    if( ("set"+name).equals(method.getName()) ){
+
+                        Object propertyObj = map.get(ref);
+                        method.invoke(parentObj,propertyObj);
+
+                    }
+                }
+                map.put(parentId,parentObj);
             }
 
 
