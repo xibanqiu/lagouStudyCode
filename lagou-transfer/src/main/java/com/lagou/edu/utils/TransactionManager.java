@@ -15,17 +15,6 @@ public class TransactionManager {
         this.connectionUtils = connectionUtils;
     }
 
-    /*private TransactionManager(){
-
-    }
-
-    private static TransactionManager transactionManager = new TransactionManager();
-
-    public static TransactionManager getInstance() {
-        return  transactionManager;
-    }*/
-
-
 
     // 开启手动事务控制
     public void beginTransaction() throws SQLException {

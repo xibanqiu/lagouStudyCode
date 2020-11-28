@@ -1,20 +1,26 @@
 package com.lagou.dao.Impl;
 
-import com.alibaba.druid.pool.DruidPooledConnection;
 import com.lagou.dao.AccountDao;
 import com.lagou.pojo.Account;
-import com.lagou.utils.DruidUtils;
+import com.lagou.utils.ConnectionUtils;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class AccountDaoImpl implements AccountDao {
 
+    private ConnectionUtils connectionUtils= null;
+
+    public void setConnectionUtils (ConnectionUtils connectionUtils){
+        this.connectionUtils = connectionUtils;
+    }
+
 
     @Override
     public Account queryAccountCardNo(String cardNo) throws Exception {
 
-        DruidPooledConnection connection = DruidUtils.getInstance().getConnection();
+        Connection connection = connectionUtils.getCurrentThreadConn();
 
         String sql = "select * from account where cardNo = ?";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -35,7 +41,7 @@ public class AccountDaoImpl implements AccountDao {
 
         resultSet.close();
         preparedStatement.close();
-        connection.close();
+//        connection.close();
 
         return  account;
     }
@@ -43,7 +49,7 @@ public class AccountDaoImpl implements AccountDao {
     @Override
     public int updateAccountByCardNo(Account account) throws Exception{
 
-        DruidPooledConnection connection = DruidUtils.getInstance().getConnection();
+        Connection connection = connectionUtils.getCurrentThreadConn();
 
         String sql = "update account set money = ? where cardNo = ?";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -54,7 +60,7 @@ public class AccountDaoImpl implements AccountDao {
         int i = preparedStatement.executeUpdate();
 
         preparedStatement.close();
-        connection.close();
+//        connection.close();
 
         return i;
     }

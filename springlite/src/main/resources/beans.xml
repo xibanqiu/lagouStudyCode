@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <beans>
 
-    <bean id = "accountDao" class="com.lagou.dao.Impl.AccountDaoImpl"></bean>
+    <bean id = "accountDao" class="com.lagou.dao.Impl.AccountDaoImpl">
+        <!-- 这里加上一个 依赖的关系 -->
+        <property name="ConnectionUtils" ref="connectionUtils"> </property>
+    </bean>
 
     <bean id = "transferService" class="com.lagou.service.impl.TransferServiceImpl">
         <!-- 这里加上一个 依赖的关系 -->
         <property name="AccountDao" ref="accountDao"> </property>
+        <property name="TransactionManager" ref="transactionManager"> </property>
     </bean>
+
+
+    <bean id = "transactionManager" class="com.lagou.utils.TransactionManager">
+        <!-- 这里加上一个 依赖的关系 -->
+        <property name="ConnectionUtils" ref="connectionUtils"> </property>
+    </bean>
+
+    <bean id = "connectionUtils" class="com.lagou.utils.ConnectionUtils"> </bean>
 
 </beans>
