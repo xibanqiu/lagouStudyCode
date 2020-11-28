@@ -44,7 +44,23 @@ public class BeanFactory {
                 Class<?> aClass = Class.forName(classStr);
                 Object o = aClass.newInstance();
                 map.put(idStr,o);
+
             }
+
+            List<Element> properties = rootElement.selectNodes("//property");
+
+            for (int i = 0; i < properties.size(); i++) {
+                Element element = properties.get(i);
+
+                String ref = element.attributeValue("ref");
+                String classStr = element.attributeValue("class");
+
+                
+
+
+            }
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <beans>
 
-    <bean id = "accountDao" class="com.lagou.dao.Impl.AccountDaoImpl">
-
-    </bean>
-
+    <bean id = "accountDao" class="com.lagou.dao.Impl.AccountDaoImpl"></bean>
 
     <bean id = "transferService" class="com.lagou.service.impl.TransferServiceImpl">
-
-
+        <property name="AccountDao" ref="accountDao"> </property>
     </bean>
-
-
 
 </beans>
