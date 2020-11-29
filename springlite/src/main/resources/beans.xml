@@ -9,7 +9,7 @@
     <bean id = "transferService" class="com.lagou.service.impl.TransferServiceImpl">
         <!-- 这里加上一个 依赖的关系 -->
         <property name="AccountDao" ref="accountDao"> </property>
-        <property name="TransactionManager" ref="transactionManager"> </property>
+
     </bean>
 
 
@@ -19,5 +19,10 @@
     </bean>
 
     <bean id = "connectionUtils" class="com.lagou.utils.ConnectionUtils"> </bean>
+
+    <bean id = "proxyFactory" class="com.lagou.factory.ProxyFactory">
+        <!-- 这里加上一个 依赖的关系 -->
+        <property name="TransactionManager" ref="transactionManager"> </property>
+    </bean>
 
 </beans>

@@ -21,18 +21,18 @@ public class TransferServiceImpl implements TransferService {
         this.accountDao = accountDao;
     }
 
-    private TransactionManager transactionManager;
-
-    public void setTransactionManager(TransactionManager transactionManager){
-        this.transactionManager = transactionManager;
-    }
+//    private TransactionManager transactionManager;
+//
+//    public void setTransactionManager(TransactionManager transactionManager){
+//        this.transactionManager = transactionManager;
+//    }
 
     @Override
     public void transfer(String fromCardNo, String toCardNo, Integer money) throws Exception {
 
-        try {
-            //开启事务管理
-            transactionManager.beginTransaction();
+//        try {
+//            //开启事务管理
+//            transactionManager.beginTransaction();
 
             Account from = accountDao.queryAccountCardNo(fromCardNo);
             Account to = accountDao.queryAccountCardNo(toCardNo);
@@ -43,13 +43,13 @@ public class TransferServiceImpl implements TransferService {
             accountDao.updateAccountByCardNo(from);
             accountDao.updateAccountByCardNo(to);
 
-            //进行事务提交
-            transactionManager.commit();
-        }catch (Exception e){
-            //进行事务回滚
-            transactionManager.rollback();
-            throw  e;
-        }
+//            //进行事务提交
+//            transactionManager.commit();
+//        }catch (Exception e){
+//            //进行事务回滚
+//            transactionManager.rollback();
+//            throw  e;
+//        }
 
     }
 }

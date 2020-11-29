@@ -1,6 +1,7 @@
 package com.lagou.servlet;
 
 import com.lagou.factory.BeanFactory;
+import com.lagou.factory.ProxyFactory;
 import com.lagou.pojo.Result;
 import com.lagou.service.TransferService;
 import com.lagou.service.impl.TransferServiceImpl;
@@ -21,8 +22,14 @@ public class TransferServlet extends HttpServlet {
     // 实例化 transferService 对象
 //    private TransferService transferService = new TransferServiceImpl();
 
+//    // 使用工厂  实例化 transferService 对象
+//    private TransferService transferService = (TransferService) BeanFactory.getBean("transferService");
+
     // 使用工厂  实例化 transferService 对象
-    private TransferService transferService = (TransferService) BeanFactory.getBean("transferService");
+    private ProxyFactory proxyFactory = (ProxyFactory) BeanFactory.getBean("proxyFactory");
+
+    private TransferService transferService = (TransferService) proxyFactory.getObjByJdkProxy(  (TransferService) BeanFactory.getBean("transferService"));
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         this.doPost(req, resp);
