@@ -1,0 +1,9 @@
+<beans>
+    <bean id = "accountDaoImpl" class="com.lagou.dao.Impl.AccountDaoImpl">
+
+    </bean>
+
+    <bean id = "transferServiceImpl" class="com.lagou.service.impl.TransferServiceImpl">
+        <property  name = "AccountDaoImpl" ref ="accountDaoImpl" />
+    </bean>
+</beans>
