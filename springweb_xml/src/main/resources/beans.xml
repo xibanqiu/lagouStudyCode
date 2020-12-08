@@ -1,0 +1,6 @@
+<beans>
+
+    <bean id="accountDaoImpl" class="com.lagou.dao.daoImpl.AccountDaoImpl"></bean>
+    <bean id="transferServiceImpl" class="com.lagou.service.serviceImpl.TransferServiceImpl"></bean>
+
+</beans>
