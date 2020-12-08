@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans>
+
+
+    <!-- 包扫描 -->
+    <component-scan base-package="com.lagou"/>
+
+<!--
+    <bean id = "accountDao" class="com.lagou.dao.Impl.AccountDaoImpl">
+        &lt;!&ndash; 这里加上一个 依赖的关系 &ndash;&gt;
+        <property name="ConnectionUtils" ref="connectionUtils"> </property>
+    </bean>
+
+    <bean id = "transferService" class="com.lagou.service.impl.TransferServiceImpl">
+        &lt;!&ndash; 这里加上一个 依赖的关系 &ndash;&gt;
+        <property name="AccountDao" ref="accountDao"> </property>
+
+    </bean>
+
+
+    <bean id = "transactionManager" class="com.lagou.utils.TransactionManager">
+        &lt;!&ndash; 这里加上一个 依赖的关系 &ndash;&gt;
+        <property name="ConnectionUtils" ref="connectionUtils"> </property>
+    </bean>
+
+    <bean id = "connectionUtils" class="com.lagou.utils.ConnectionUtils"> </bean>
+
+    <bean id = "proxyFactory" class="com.lagou.factory.ProxyFactory">
+        &lt;!&ndash; 这里加上一个 依赖的关系 &ndash;&gt;
+        <property name="TransactionManager" ref="transactionManager"> </property>
+    </bean>
+-->
+
+</beans>
