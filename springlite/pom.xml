@@ -41,6 +41,19 @@
       <version>1.1.21</version>
     </dependency>
 
+    <!-- 反射包 -->
+    <dependency>
+      <groupId>org.reflections</groupId>
+      <artifactId>reflections</artifactId>
+      <version>0.9.10</version>
+    </dependency>
+
+    <!-- StringUtilS -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.4</version>
+    </dependency>
     <!-- servlet -->
     <dependency>
       <groupId>javax.servlet</groupId>

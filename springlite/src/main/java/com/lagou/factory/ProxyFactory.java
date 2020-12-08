@@ -1,5 +1,7 @@
 package com.lagou.factory;
 
+import com.lagou.annotation.MyAutowired;
+import com.lagou.annotation.MyService;
 import com.lagou.utils.TransactionManager;
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;
@@ -9,11 +11,13 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
+@MyService("proxyFactory")
 public class ProxyFactory {
 
-    private TransactionManager transactionManager = null;
+    @MyAutowired
+    private TransactionManager transactionManager;
 
-    public   void  setTransactionManager(TransactionManager transactionManager){
+    public void setTransactionManager(TransactionManager transactionManager){
         this.transactionManager = transactionManager;
     }
 

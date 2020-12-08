@@ -1,5 +1,7 @@
 package com.lagou.dao.Impl;
 
+import com.lagou.annotation.MyAutowired;
+import com.lagou.annotation.MyService;
 import com.lagou.dao.AccountDao;
 import com.lagou.pojo.Account;
 import com.lagou.utils.ConnectionUtils;
@@ -8,9 +10,12 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+@MyService("accountDao")
 public class AccountDaoImpl implements AccountDao {
 
+    @MyAutowired
     private ConnectionUtils connectionUtils= null;
+
 
     public void setConnectionUtils (ConnectionUtils connectionUtils){
         this.connectionUtils = connectionUtils;

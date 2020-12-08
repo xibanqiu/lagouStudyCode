@@ -1,5 +1,8 @@
 package com.lagou.service.impl;
 
+import com.lagou.annotation.MyAutowired;
+import com.lagou.annotation.MyService;
+import com.lagou.annotation.MyTransaction;
 import com.lagou.dao.AccountDao;
 import com.lagou.dao.Impl.AccountDaoImpl;
 import com.lagou.factory.BeanFactory;
@@ -7,6 +10,8 @@ import com.lagou.pojo.Account;
 import com.lagou.service.TransferService;
 import com.lagou.utils.TransactionManager;
 
+@MyService("transferService")
+@MyTransaction
 public class TransferServiceImpl implements TransferService {
 
 //    private AccountDao accountDao = new AccountDaoImpl();
@@ -14,6 +19,7 @@ public class TransferServiceImpl implements TransferService {
     // 使用工厂  实例化 accountDao 对象
 //    private AccountDao accountDao = (AccountDao) BeanFactory.getBean("accountDao");
 
+    @MyAutowired
     private AccountDao accountDao = null;
 
     // 提供一个set 的方法 供 反射注入
@@ -41,6 +47,7 @@ public class TransferServiceImpl implements TransferService {
             to.setMoney(to.getMoney() + money);
 
             accountDao.updateAccountByCardNo(from);
+            int i =2/0;
             accountDao.updateAccountByCardNo(to);
 
 //            //进行事务提交
