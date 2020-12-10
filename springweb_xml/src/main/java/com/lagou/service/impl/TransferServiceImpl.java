@@ -5,16 +5,17 @@ import com.lagou.dao.Impl.AccountDaoImpl;
 import com.lagou.factory.BeanFactory;
 import com.lagou.pojo.Account;
 import com.lagou.service.TransferService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+
 
 public class TransferServiceImpl implements TransferService {
 
-//    private AccountDao accountDao = new AccountDaoImpl();
 
-//    private AccountDao accountDao = (AccountDao) BeanFactory.getBean("accountDao");
+    private AccountDao accountDao;
 
-    private AccountDao accountDao = null;
-
-    public void setAccount( AccountDao accountDao ){
+    public void setAccountDao(AccountDao accountDao) {
         this.accountDao = accountDao;
     }
 

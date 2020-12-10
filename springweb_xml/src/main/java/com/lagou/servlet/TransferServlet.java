@@ -1,10 +1,10 @@
 package com.lagou.servlet;
 
-import com.lagou.factory.BeanFactory;
 import com.lagou.pojo.Result;
 import com.lagou.service.TransferService;
-import com.lagou.service.impl.TransferServiceImpl;
 import com.lagou.utils.JsonUtils;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,7 +20,17 @@ public class TransferServlet extends HttpServlet {
     // 1 实例化 service 对象
 //    private TransferService transferService = new TransferServiceImpl();
 
-    private TransferService transferService = (TransferService) BeanFactory.getBean("transferService");
+    private TransferService transferService ;
+
+
+    @Override
+    public void init() throws ServletException {
+
+        WebApplicationContext webApplicationContext = WebApplicationContextUtils.getWebApplicationContext(this.getServletContext());
+
+        transferService = (TransferService) webApplicationContext.getBean("transferService");
+
+    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -55,9 +65,6 @@ public class TransferServlet extends HttpServlet {
 
         resp.setContentType("application/json;charset=utf-8");  // 设置返回的 数据类型
         resp.getWriter().print(JsonUtils.object2Json(result));  // 调用工具类 。将返回结果处理类，转成json
-
-
-
 
     }
 }

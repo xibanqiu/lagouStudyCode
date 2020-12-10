@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+ https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+<!--    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" >
+        <property name="" value=""/>
+        <property name="" value=""/>
+        <property name="" value=""/>
+        <property name="" value=""/>
+    </bean>-->
+
+
+
+    <bean id="connectionUtils" class="com.lagou.utils.ConnectionUtils" />
+
+
+    <bean id="accountDao" class="com.lagou.dao.Impl.AccountDaoImpl">
+        <property name="connectionUtils" ref="connectionUtils"  />
+    </bean>
+
+    <bean id="transferService" class="com.lagou.service.impl.TransferServiceImpl" scope="singleton">
+
+        <property name="accountDao" ref="accountDao"/>
+     </bean>
+
+    <bean id="transactionManager" class="com.lagou.utils.TransactionManager" >
+        <property name="connectionUtils" ref="connectionUtils"/>
+    </bean>
+    <bean id="proxyFactory" class="com.lagou.factory.ProxyFactory">
+        <property name="transactionManager" ref="transactionManager"/>
+    </bean>
+
+
+
+</beans>
