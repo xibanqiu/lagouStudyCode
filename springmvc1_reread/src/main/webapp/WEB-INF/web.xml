@@ -1,0 +1,58 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+  <filter>
+    <filter-name>encoding</filter-name>
+    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>encoding</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <servlet>
+    <servlet-name> springmvc</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <!--
+    设置 springmvc的配置文件
+    -->
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>classpath:springmvc-servlet.xml</param-value>
+    </init-param>
+
+    <!--  设置级别 1 ，数字越小，级别越高，1为最高 -->
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>springmvc</servlet-name>
+    <!--
+    这个 配置 DispatcherServlet 的 拦截匹配规则的URL 请求，进入springmvc框架处理
+
+    方式一:带后缀，比如 *.action   *.do  *.aaa
+          该方式比较精确、方便，在以前和现在企业中都有很大的使用比例
+    方式二:/
+        不会拦截  .jsp 但是会拦截 .html 等静态资源 (静态资源：除了servlet和 jsp 之外 的js 、css 、png 等)
+
+        这里有两个疑问 ：1、怎么解决 方式二 拦截静态资源的方案
+                       2、为什么不会拦截 .jsp ?
+
+    方式三：/*  拦截所有，包括 .jsp
+    -->
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+
+</web-app>
