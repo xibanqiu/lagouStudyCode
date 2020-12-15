@@ -18,12 +18,12 @@
     </bean>
 
 
-    <bean id = "transactionManager" class="com.lagou.utils.TransactionManager">
+    <bean id = "transactionManager" class="com.lagou.com.lagou.utils.TransactionManager">
         &lt;!&ndash; 这里加上一个 依赖的关系 &ndash;&gt;
         <property name="ConnectionUtils" ref="connectionUtils"> </property>
     </bean>
 
-    <bean id = "connectionUtils" class="com.lagou.utils.ConnectionUtils"> </bean>
+    <bean id = "connectionUtils" class="com.lagou.com.lagou.utils.ConnectionUtils"> </bean>
 
     <bean id = "proxyFactory" class="com.lagou.factory.ProxyFactory">
         &lt;!&ndash; 这里加上一个 依赖的关系 &ndash;&gt;

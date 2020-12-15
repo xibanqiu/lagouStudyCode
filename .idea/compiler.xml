@@ -7,15 +7,19 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="aSimpleWebDemo" />
-        <module name="lagou-transfer" />
         <module name="springlite" />
+        <module name="springweb-xml_annotation" />
+        <module name="springweb-annotation" />
         <module name="springweb_xml" />
+        <module name="lagou-transfer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="aSimpleWebDemo" target="11" />
       <module name="lagou-transfer" target="11" />
       <module name="springlite" target="11" />
+      <module name="springweb-annotation" target="11" />
+      <module name="springweb-xml_annotation" target="11" />
       <module name="springweb_xml" target="11" />
     </bytecodeTargetLevel>
   </component>

@@ -15,7 +15,7 @@
 
 
 
-    <bean id="connectionUtils" class="com.lagou.utils.ConnectionUtils" />
+    <bean id="connectionUtils" class="com.lagou.com.lagou.utils.ConnectionUtils" />
 
 
     <bean id="accountDao" class="com.lagou.dao.Impl.AccountDaoImpl">
@@ -27,7 +27,7 @@
         <property name="accountDao" ref="accountDao"/>
      </bean>
 
-    <bean id="transactionManager" class="com.lagou.utils.TransactionManager" >
+    <bean id="transactionManager" class="com.lagou.com.lagou.utils.TransactionManager" >
         <property name="connectionUtils" ref="connectionUtils"/>
     </bean>
     <bean id="proxyFactory" class="com.lagou.factory.ProxyFactory">

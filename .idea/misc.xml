@@ -4,6 +4,8 @@
     <file type="web" url="file://$PROJECT_DIR$/aSimpleWebDemo" />
     <file type="web" url="file://$PROJECT_DIR$/lagou-transfer" />
     <file type="web" url="file://$PROJECT_DIR$/springlite" />
+    <file type="web" url="file://$PROJECT_DIR$/springweb-annotation" />
+    <file type="web" url="file://$PROJECT_DIR$/springweb-xml_annotation" />
     <file type="web" url="file://$PROJECT_DIR$/springweb_xml" />
     <file type="web" url="file://$PROJECT_DIR$/springweb_xml11" />
   </component>
@@ -23,6 +25,8 @@
         <option value="$PROJECT_DIR$/simpleWebDemo/pom.xml" />
         <option value="$PROJECT_DIR$/aSimpleWebDemo/pom.xml" />
         <option value="$PROJECT_DIR$/springweb_xml/pom.xml" />
+        <option value="$PROJECT_DIR$/springweb-xml_annotation/pom.xml" />
+        <option value="$PROJECT_DIR$/springweb-annotation/pom.xml" />
       </list>
     </option>
   </component>

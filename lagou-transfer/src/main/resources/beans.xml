@@ -12,10 +12,10 @@
 
 
     <!--配置新增的三个Bean-->
-    <bean id="connectionUtils" class="com.lagou.edu.utils.ConnectionUtils"></bean>
+    <bean id="connectionUtils" class="com.lagou.edu.com.lagou.utils.ConnectionUtils"></bean>
 
     <!--事务管理器-->
-    <bean id="transactionManager" class="com.lagou.edu.utils.TransactionManager">
+    <bean id="transactionManager" class="com.lagou.edu.com.lagou.utils.TransactionManager">
         <property name="ConnectionUtils" ref="connectionUtils"/>
     </bean>
 

@@ -1,17 +1,18 @@
 package com.atguigu.test;
 
+import com.lagou.service.TransferService;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class SpringTest {
 
     @Test
-    public void test(){
+    public void test() throws Exception {
 
         ClassPathXmlApplicationContext application = new ClassPathXmlApplicationContext("applicationContext.xml");
-        Object transferService = application.getBean("transferService");
+        TransferService transferService = (TransferService)application.getBean("transferService");
 
-        System.out.println(transferService);
+        transferService.transfer("6029621011000","6029621011001",100);
     }
 
 
