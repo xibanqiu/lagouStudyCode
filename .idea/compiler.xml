@@ -14,10 +14,12 @@
         <module name="Mybatis_1Litetest" />
         <module name="Mybatis_5Cache" />
         <module name="springmvc1_reread" />
+        <module name="MVC" />
         <module name="Mybatis_1Lite" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="MVC" target="11" />
       <module name="mybatis" target="1.8" />
       <module name="Mybatis_1Lite" target="1.8" />
       <module name="Mybatis_1Litetest" target="1.8" />
