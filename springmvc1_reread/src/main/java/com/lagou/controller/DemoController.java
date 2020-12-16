@@ -168,7 +168,17 @@ public class DemoController {
         return modelAndView;
     }
 
+    @RequestMapping("/handle09")
+    public ModelAndView handle09(Date birthday) {
 
+        System.out.println(birthday);
+
+        Date date = new Date();
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("date",birthday);
+        modelAndView.setViewName("success");
+        return modelAndView;
+    }
 
 
 }
