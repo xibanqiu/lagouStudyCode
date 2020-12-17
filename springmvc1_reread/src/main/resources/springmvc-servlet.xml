@@ -10,7 +10,7 @@
 
         <context:component-scan base-package="com.lagou" />
 
-        <mvc:annotation-driven />
+
 
     <!-- 静态资源配置方案一 -->
         <!--
@@ -29,13 +29,17 @@
         mapping:约定的静态资源的url规则
         location:指定的静态资源的存放位置
         -->
-        <mvc:resources location="classpath:/" mapping="/resources/**"/>
+        <mvc:resources location="classpath:/"  mapping="/resources/**"/>
+        <mvc:resources location="/WEB-INF/js/" mapping="/js/**"/>
 
         <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
             <property name="prefix" value="/WEB-INF/jsp/" />
             <property name="suffix" value=".jsp" />
         </bean>
 
+
+    <!-- 这里需要添加 -->
+    <mvc:annotation-driven conversion-service="conversionServiceBean" />
     <!-- 注册自定义的转换器 -->
     <bean id="conversionServiceBean"
           class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
