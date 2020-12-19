@@ -52,5 +52,37 @@
     </bean>
 
 
+    <!-- 过滤器集 的 设置 -->
+    <mvc:interceptors>
+
+        <!--  单个过滤器的设置 -->
+        <mvc:interceptor>
+
+            <!--  配置当前拦截器的url的拦截规则  ，**  代表 当前目录下及其 子目录下的所有url -->
+            <mvc:mapping path="/**"/>
+            <!--  exclude-mapping  在 mapping 的基础上 排除掉医学url 拦截 -->
+<!--            <mvc:exclude-mapping path="/demo/**"/>-->
+
+            <bean class="com.lagou.interceptor.MyInterceptor1"/>
+
+        </mvc:interceptor>
+
+        <!--  单个过滤器的设置 -->
+        <mvc:interceptor>
+
+            <!--  配置当前拦截器的url的拦截规则  ，**  代表 当前目录下及其 子目录下的所有url -->
+            <mvc:mapping path="/**"/>
+            <!--  exclude-mapping  在 mapping 的基础上 排除掉医学url 拦截 -->
+            <!--            <mvc:exclude-mapping path="/demo/**"/>-->
+
+            <bean class="com.lagou.interceptor.MyInterceptor2"/>
+
+        </mvc:interceptor>
+
+    </mvc:interceptors>
+
+
+
+
 
 </beans>

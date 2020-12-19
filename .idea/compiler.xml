@@ -16,6 +16,7 @@
         <module name="springmvc1_reread" />
         <module name="MVC" />
         <module name="Mybatis_1Lite" />
+        <module name="springmvc2_ssm" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -29,6 +30,7 @@
       <module name="Mybatis_5Cache" target="1.8" />
       <module name="Mybatis_6Plugin" target="1.8" />
       <module name="springmvc1_reread" target="11" />
+      <module name="springmvc2_ssm" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

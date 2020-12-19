@@ -1,5 +1,7 @@
 package com.lagou.mvcframework;
 
+import com.lagou.annotaiton.MyController;
+
 import javax.servlet.Servlet;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -19,6 +21,9 @@ public class MyDispatcherServlet extends HttpServlet {
     // 配置一个
     private Properties properties = new Properties();
 
+    //缓存扫描到的类 全限定名
+    private List<String> classNames = new ArrayList<>();
+
     @Override
     public void init(ServletConfig servletConfig) throws ServletException {
         // 1 、加载配置文件 获取一些配置的信息，如包扫描的路径
@@ -26,12 +31,14 @@ public class MyDispatcherServlet extends HttpServlet {
         String contextConfigLocation = servletConfig.getInitParameter("contextConfigLocation");
         doLoadConfig(contextConfigLocation);
 
-
         // 2、扫描相关的类，扫描注解
         doScan(properties.getProperty("mvc.scan"));
 
-
         // 3、 初始化bean对象 （实现ioc容器，基于注解）
+
+        doInstance();
+
+
 
         // 4、实现依赖注入
 
@@ -42,8 +49,38 @@ public class MyDispatcherServlet extends HttpServlet {
 
     }
 
-    //缓存扫描到的类 全限定名
-    private List<String> classNames = new ArrayList<>();
+    private void doInstance(){
+        if (classNames.size() ==0 ) return;
+
+        try {
+
+            for (int i = 0; i < classNames.size(); i++) {
+                Class<?> aClass = Class.forName(classNames.get(i));
+
+
+                //
+                if( aClass.isAnnotationPresent(MyController.class) ){
+
+                }
+
+
+
+
+
+
+
+            }
+
+
+
+
+
+        }catch (Exception e){
+
+        }
+    }
+
+
 
     private void doScan(String scanPackage) {
 
