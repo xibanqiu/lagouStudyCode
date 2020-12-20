@@ -1,15 +1,15 @@
-package com.lagou.controller;
+package com.lagou.demo.controller;
 
-import com.lagou.annotaiton.MyAutowired;
-import com.lagou.annotaiton.MyController;
-import com.lagou.annotaiton.MyRequestMapping;
-import com.lagou.service.DemoService;
+
+
+import com.lagou.demo.service.DemoService;
+import com.lagou.mvcframework.annotaiton.MyAutowired;
+import com.lagou.mvcframework.annotaiton.MyController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @MyController
-@MyRequestMapping("/")
 public class DemoController {
 
     @MyAutowired

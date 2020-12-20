@@ -1,7 +1,8 @@
-package com.lagou.service.impl;
+package com.lagou.demo.service.impl;
 
-import com.lagou.annotaiton.MyService;
-        import com.lagou.service.DemoService;
+
+import com.lagou.demo.service.DemoService;
+import com.lagou.mvcframework.annotaiton.MyService;
 
 @MyService
 public class DemoServiceImpl implements DemoService {

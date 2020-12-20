@@ -8,7 +8,7 @@
 
   <servlet>
     <servlet-name>lagoumvc</servlet-name>
-    <servlet-class>com.lagou.mvcframework.MyDispatcherServlet</servlet-class>
+    <servlet-class>com.lagou.mvcframework.servlet.MyDispatcherServlet</servlet-class>
 
     <init-param>
       <param-name>contextConfigLocation</param-name>

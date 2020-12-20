@@ -3,6 +3,7 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/MVC" />
     <file type="web" url="file://$PROJECT_DIR$/springmvc1_reread" />
+    <file type="web" url="file://$PROJECT_DIR$/springmvc2_ssm" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">

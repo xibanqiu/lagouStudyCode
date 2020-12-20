@@ -1,4 +1,4 @@
-package com.lagou.service;
+package com.lagou.demo.service;
 
 public interface DemoService {
 

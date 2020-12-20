@@ -1,4 +1,4 @@
-package com.lagou.annotaiton;
+package com.lagou.mvcframework.annotaiton;
 
 import java.lang.annotation.*;
 
