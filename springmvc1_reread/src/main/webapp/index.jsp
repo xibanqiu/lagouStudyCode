@@ -100,5 +100,24 @@
 </div>
 
 
+<div>
+
+    <h2>multipart 文件上传 </h2>
+    <fieldset>
+    <%--
+        1、method = "post"
+        2、enctype= " multipart/form-data"
+        3、type = "file"
+    --%>
+    <form method="post" enctype="multipart/form-data" action="/demo/handle15">
+        <input type="file" name="multipartFile">
+        <input type="submit" value="上传">
+
+    </form>
+
+    </fieldset>
+
+</div>
+
 </body>
 </html>
