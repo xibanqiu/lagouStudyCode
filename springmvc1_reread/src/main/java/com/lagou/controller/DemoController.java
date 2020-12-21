@@ -7,18 +7,35 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
+import java.util.UUID;
 
 @Controller
 @RequestMapping("/demo")
 public class DemoController {
 
+
+    @ExceptionHandler(ArithmeticException.class)
+    public void handleException(ArithmeticException e,HttpServletResponse response){
+
+        try {
+            response.getWriter().write(e.getMessage());
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+    }
 
     /**
      * 直接声明形参ModelMap，封装数据
@@ -272,6 +289,87 @@ public class DemoController {
 
         user.setName("张三丰");
         return user;
+    }
+
+    /**
+     * 文件上传
+     *
+     * @return
+     */
+    @PostMapping(value = "/handle15")
+    // 添加    @ResponseBody 之后，不再走 视图接续器那个流程，而是等同于 response 直接输出数据
+//    @ResponseBody
+    public ModelAndView handle15(MultipartFile multipartFile,HttpSession httpSession) throws IOException {
+
+        String originalFilename = multipartFile.getOriginalFilename();
+
+        String ext = originalFilename.substring(originalFilename.lastIndexOf(".") + 1);
+
+        String newName = UUID.randomUUID().toString() + "." + ext;
+
+        String realPath = httpSession.getServletContext().getRealPath("/uploads");
+
+        String dataPath = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+
+        File folder = new File(realPath + "/" + dataPath);
+
+        if(!folder.exists()){
+            folder.mkdirs();
+        }
+
+        multipartFile.transferTo(new File(folder,newName));
+
+        //
+        Date date = new Date();
+        ModelAndView modelAndView = new ModelAndView();
+
+        modelAndView.addObject("date",date);
+
+        modelAndView.setViewName("success");
+
+        return modelAndView;
+
+    }
+
+
+    @RequestMapping("/handle16")
+    public ModelAndView handle16(){
+
+        int i = 2/0;
+
+        Date date = new Date();
+        ModelAndView modelAndView = new ModelAndView();
+
+        modelAndView.addObject("date",date);
+
+        modelAndView.setViewName("success");
+
+        return modelAndView;
+
+    }
+
+
+    @RequestMapping("/handle00")
+    public ModelAndView handle00(String name){
+
+        Date date = new Date();
+        ModelAndView modelAndView = new ModelAndView();
+
+        modelAndView.addObject("date",date);
+
+        modelAndView.setViewName("success");
+
+        return modelAndView;
+
+    }
+    @RequestMapping("/handleRedirect")
+    public String handleRedirect(String name, RedirectAttributes redirectAttributes){
+
+//        return "redirect:handle00?name="+name;   拼接参数的方式，安全性，参数长度，都有局限
+
+        redirectAttributes.addAttribute("name",name);
+        return "redirect:handle00";
+
     }
 
 
