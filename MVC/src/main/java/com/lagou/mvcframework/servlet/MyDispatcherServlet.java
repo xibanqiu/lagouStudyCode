@@ -4,6 +4,7 @@ import com.lagou.mvcframework.annotaiton.MyAutowired;
 import com.lagou.mvcframework.annotaiton.MyController;
 import com.lagou.mvcframework.annotaiton.MyRequestMapping;
 import com.lagou.mvcframework.annotaiton.MyService;
+import com.lagou.mvcframework.pojo.Handler;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.servlet.ServletConfig;
@@ -15,8 +16,11 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.lang.reflect.Parameter;
 import java.util.*;
+import java.util.regex.Pattern;
 
 
 public class MyDispatcherServlet extends HttpServlet {
@@ -31,7 +35,7 @@ public class MyDispatcherServlet extends HttpServlet {
     private Map<String,Object> ioc = new HashMap<>();
 
     // 创建要给  url 和  方法  的映射容器
-    private Map<String, Method> handleMapping = new HashMap<>();
+    private ArrayList<Handler> handleMapping = new ArrayList<>();
 
     @Override
     public void init(ServletConfig servletConfig) throws ServletException {
@@ -79,12 +83,28 @@ public class MyDispatcherServlet extends HttpServlet {
                         if (method.isAnnotationPresent(MyRequestMapping.class)){
 
                             MyRequestMapping methodAnnotation = method.getAnnotation(MyRequestMapping.class);
-
                             String methodUrl = methodAnnotation.value();
-
                             String url = baseUrl + methodUrl;
 
-                            handleMapping.put(url,method);
+                            Handler handler = new Handler(entry.getValue(),method,Pattern.compile(url));
+
+                            // 得到方法的 参数
+                            Parameter[] parameters = method.getParameters();
+
+                            for (int i = 0; i < parameters.length; i++) {
+
+                                Parameter parameter = parameters[i];
+                                //方法的参数 是 HttpServletResponse 和 HttpServletRequest
+                                if(parameter.getType() == HttpServletResponse.class || parameter.getType() == HttpServletRequest.class){
+
+                                    handler.getParamIndexMapping().put(parameter.getType().getSimpleName(),i);
+                                }else {
+                                    handler.getParamIndexMapping().put(parameter.getName(),i);
+                                }
+
+                            }
+                            handleMapping.add(handler);
+
 
                         }
 
@@ -117,17 +137,17 @@ public class MyDispatcherServlet extends HttpServlet {
                     if( declaredField.isAnnotationPresent(MyAutowired.class) ){
                         MyAutowired annotation = declaredField.getAnnotation(MyAutowired.class);
 
-                        String beaName = declaredField.getName();
-                        if( StringUtils.isBlank(annotation.value()) ){
-                            beaName = annotation.value();
+                        String besaName = declaredField.getName();
+                        if( StringUtils.isNotBlank(annotation.value()) ){
+                            besaName = annotation.value();
                         }
-                        Object o = ioc.get(beaName);
+                        Object o = ioc.get(besaName);
 
                         // 暴力访问
                         declaredField.setAccessible(true);
-                        
-                        declaredField.set(entry.getValue(),ioc.get(beaName));
-                        
+
+                        declaredField.set(entry.getValue(),ioc.get(besaName));
+
                     }
 
                 }
@@ -146,11 +166,10 @@ public class MyDispatcherServlet extends HttpServlet {
             for (int i = 0; i < classNames.size(); i++) {
                 Class<?> aClass = Class.forName(classNames.get(i));
 
-
                 // MyController 的处理方式 : 根据Class 实例化 对象,将首字母小写 放到 Map集合中
                 if( aClass.isAnnotationPresent(MyController.class) ){
                     Object instance = aClass.newInstance();
-                    ioc.put(changeFirstCharLower(classNames.get(i)),instance);
+                    ioc.put(changeFirstCharLower(aClass.getSimpleName()),instance);
 
                 }
 
@@ -250,14 +269,30 @@ public class MyDispatcherServlet extends HttpServlet {
 
         if('A' < chars[0]  && chars[0] < 'Z') {
 
-            chars[0]  = (char) (chars[0] - 32);
+            chars[0]  = (char) (chars[0] + 32);
 
         }
 
-        return chars.toString();
+        return String.valueOf(chars);
 
     }
 
+    private Handler getHandler(HttpServletRequest request){
+
+        if(handleMapping.isEmpty()) return null;
+
+        String url = request.getRequestURI();
+
+        // 遍历得到 url 匹配的handler
+        for (Handler handler : handleMapping) {
+
+            if(handler.getPattern().matcher(url).matches()){
+                return handler;
+            }
+        }
+
+        return null;
+    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -267,10 +302,46 @@ public class MyDispatcherServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        String requestURI = req.getRequestURI();
-        Method method = handleMapping.get(requestURI);
-        method.invoke();
+        Handler handler = getHandler(req);
 
+        if(null == handler){
+            resp.getWriter().write("404 not found");
+            return;
+
+        }
+
+        Class<?>[] parameterTypes = handler.getMethod().getParameterTypes();
+        Object[] paramValues = new Object[parameterTypes.length];
+
+        Map<String, String[]> parameterMap = req.getParameterMap();
+
+        for(Map.Entry<String, String[]> param : parameterMap.entrySet()){
+
+            String value = StringUtils.join(param.getValue(), ",");
+
+            // 如果不包含 跳出
+            if(!handler.getParamIndexMapping().keySet().contains(param.getKey())){continue;}
+
+            Integer index = handler.getParamIndexMapping().get(param.getKey());
+
+            paramValues[index] = value;
+        }
+
+
+        Integer requestIndex = handler.getParamIndexMapping().get(HttpServletRequest.class.getSimpleName());
+        paramValues[requestIndex] = req;
+
+        Integer responseIndex = handler.getParamIndexMapping().get(HttpServletResponse.class.getSimpleName());
+        paramValues[responseIndex] = resp;
+
+
+        try {
+            handler.getMethod().invoke(handler.getController(),paramValues);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
 
     }
 
