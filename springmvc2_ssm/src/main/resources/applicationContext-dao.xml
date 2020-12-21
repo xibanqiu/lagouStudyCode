@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+ http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd
+ http://www.springframework.org/schema/tx
+ http://www.springframework.org/schema/tx/spring-tx.xsd
+">
+
+    <!-- 包扫描 -->
+    <context:component-scan base-package="com.lagou.dao"/>
+
+    <!-- 引入外部资源文件 -->
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+
+    <!--第三⽅jar中的bean定义在xml中-->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+
+
+    <!--SqlSessionFactory对象应该放到Spring容器中作为单例对象管理
+     原来mybaits中sqlSessionFactory的构建是需要素材的：SqlMapConfig.xml中的内容
+     -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!-- 别名 映射扫描 -->
+        <property name="typeAliasesPackage" value="com.lagou.pojo"/>
+
+
+        <!-- 数据源 dataSource -->
+
+        <property name="dataSource" ref="dataSource"/>
+
+    </bean>
+
+
+    <!--Mapper动态代理对象交给Spring管理，我们从Spring容器中直接获得Mapper的代理对象-->
+    <!--扫描mapper接⼝，⽣成代理对象，⽣成的代理对象会存储在ioc容器中-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!--mapper接口包路径配置 -->
+        <property name="basePackage" value="com.lagou.mapper"/>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+
+    </bean>
+
+    <!--事务管理-->
+    <bean id="transactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!--事务管理注解驱动-->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+</beans>
