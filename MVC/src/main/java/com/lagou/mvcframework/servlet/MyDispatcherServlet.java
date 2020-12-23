@@ -1,9 +1,6 @@
 package com.lagou.mvcframework.servlet;
 
-import com.lagou.mvcframework.annotaiton.MyAutowired;
-import com.lagou.mvcframework.annotaiton.MyController;
-import com.lagou.mvcframework.annotaiton.MyRequestMapping;
-import com.lagou.mvcframework.annotaiton.MyService;
+import com.lagou.mvcframework.annotaiton.*;
 import com.lagou.mvcframework.pojo.Handler;
 import org.apache.commons.lang3.StringUtils;
 
@@ -70,12 +67,22 @@ public class MyDispatcherServlet extends HttpServlet {
         try{
             for ( Map.Entry<String,Object> entry : ioc.entrySet()){
 
+
                 Class<?> aClass = entry.getValue().getClass();
 
                 // 判断是否 ioc容器是否 包含 MyRequestMapping 注解
                 if ( aClass.isAnnotationPresent(MyRequestMapping.class) ){
                     MyRequestMapping annotation = aClass.getAnnotation(MyRequestMapping.class);
                     String baseUrl = annotation.value();
+
+                    boolean flag_security = aClass.isAnnotationPresent(MySecurity.class);  // 该类是否实现了@MySecurity
+
+                    String[] MySecurityValue = null;
+
+                    if(flag_security){
+                        MySecurity MySecurityAnnotation = aClass.getAnnotation(MySecurity.class);
+                        MySecurityValue = MySecurityAnnotation.value();
+                    }
 
                     Method[] methods = aClass.getMethods();
 
@@ -103,8 +110,22 @@ public class MyDispatcherServlet extends HttpServlet {
                                 }
 
                             }
-                            handleMapping.add(handler);
 
+                            // 类实现了 @MySecurity
+                            if(flag_security){
+                                handler.setMySecurityClass(MySecurityValue);
+
+                                // 判断方法实现了没有
+                                if(method.isAnnotationPresent(MySecurity.class)){
+
+                                    MySecurity MySecurityAnnotationClass = method.getAnnotation(MySecurity.class);
+                                    handler.setMySecurityMethod(MySecurityAnnotationClass.value());
+
+                                }
+
+                            }
+
+                            handleMapping.add(handler);
 
                         }
 
@@ -318,6 +339,32 @@ public class MyDispatcherServlet extends HttpServlet {
         for(Map.Entry<String, String[]> param : parameterMap.entrySet()){
 
             String value = StringUtils.join(param.getValue(), ",");
+
+            if("name".equals(param.getKey())){
+                // 判断不包含
+                if(  handler.getMySecurityClass().length !=0 && !Arrays.asList(handler.getMySecurityClass()).contains(value)){
+
+                    resp.setCharacterEncoding("utf-8");
+                    resp.setHeader("Content-Type", "text/html;charset=utf-8");
+//                    resp.setContentType("text/plain;charset=utf-8");
+
+                    resp.getWriter().write("该用户没有权限访问类");
+                    return;
+                }
+            }
+
+            if("name".equals(param.getKey())){
+                // 判断不包含
+                if(  handler.getMySecurityMethod().length !=0 && !Arrays.asList(handler.getMySecurityMethod()).contains(value)){
+
+                    resp.setCharacterEncoding("utf-8");
+                    resp.setHeader("Content-Type", "text/html;charset=utf-8");
+//                    resp.setContentType("text/plain;charset=utf-8");
+
+                    resp.getWriter().write("该用户没有权限访问方法");
+                    return;
+                }
+            }
 
             // 如果不包含 跳出
             if(!handler.getParamIndexMapping().keySet().contains(param.getKey())){continue;}
