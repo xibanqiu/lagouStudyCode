@@ -4,14 +4,13 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Mybatis_1Lite/Mybatis_1Lite.iml" filepath="$PROJECT_DIR$/Mybatis_1Lite/Mybatis_1Lite.iml" />
       <module fileurl="file://$PROJECT_DIR$/Mybatis_1Litetest/Mybatis_1Litetest.iml" filepath="$PROJECT_DIR$/Mybatis_1Litetest/Mybatis_1Litetest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Mybatis_2quickStart/Mybatis_2quickStart.iml" filepath="$PROJECT_DIR$/Mybatis_2quickStart/Mybatis_2quickStart.iml" />
       <module fileurl="file://$PROJECT_DIR$/Mybatis_3multiTable/Mybatis_3multiTable.iml" filepath="$PROJECT_DIR$/Mybatis_3multiTable/Mybatis_3multiTable.iml" />
       <module fileurl="file://$PROJECT_DIR$/Mybatis_4Annotation/Mybatis_4Annotation.iml" filepath="$PROJECT_DIR$/Mybatis_4Annotation/Mybatis_4Annotation.iml" />
       <module fileurl="file://$PROJECT_DIR$/Mybatis_5Cache/Mybatis_5Cache.iml" filepath="$PROJECT_DIR$/Mybatis_5Cache/Mybatis_5Cache.iml" />
       <module fileurl="file://$PROJECT_DIR$/Mybatis_6Plugin/Mybatis_6Plugin.iml" filepath="$PROJECT_DIR$/Mybatis_6Plugin/Mybatis_6Plugin.iml" />
       <module fileurl="file://$PROJECT_DIR$/lagouStudyCode.iml" filepath="$PROJECT_DIR$/lagouStudyCode.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis-3-master/mybatis.iml" filepath="$PROJECT_DIR$/mybatis-3-master/mybatis.iml" />
-      <module fileurl="file://$PROJECT_DIR$/springmvc1_reread/springmvc1_reread.iml" filepath="$PROJECT_DIR$/springmvc1_reread/springmvc1_reread.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot1_quilystart/springboot1_quilystart.iml" filepath="$PROJECT_DIR$/springboot1_quilystart/springboot1_quilystart.iml" />
     </modules>
   </component>
 </project>
