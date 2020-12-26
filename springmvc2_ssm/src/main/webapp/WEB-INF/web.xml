@@ -5,6 +5,7 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
 
+<<<<<<< HEAD
   <!-- 配置文件的加载 -->
   <context-param>
     <param-name>contextConfigLocation</param-name>
@@ -35,6 +36,10 @@
     <url-pattern>/*</url-pattern>
   </servlet-mapping>
 
+=======
+
+
+>>>>>>> origin/Springmvc
 
 
 </web-app>
