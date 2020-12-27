@@ -11,6 +11,13 @@
       <module fileurl="file://$PROJECT_DIR$/lagouStudyCode.iml" filepath="$PROJECT_DIR$/lagouStudyCode.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis-3-master/mybatis.iml" filepath="$PROJECT_DIR$/mybatis-3-master/mybatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot1_quilystart/springboot1_quilystart.iml" filepath="$PROJECT_DIR$/springboot1_quilystart/springboot1_quilystart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot2_mystarter/springboot2_mystarter.iml" filepath="$PROJECT_DIR$/springboot2_mystarter/springboot2_mystarter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot2_mystater-test/springboot2_mystater-test.iml" filepath="$PROJECT_DIR$/springboot2_mystater-test/springboot2_mystater-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot3-1_mybatis/springboot3-1_mybatis.iml" filepath="$PROJECT_DIR$/springboot3-1_mybatis/springboot3-1_mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot3-2_jpa/springboot3-2_jpa.iml" filepath="$PROJECT_DIR$/springboot3-2_jpa/springboot3-2_jpa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot3-3_redis/springboot3-3_redis.iml" filepath="$PROJECT_DIR$/springboot3-3_redis/springboot3-3_redis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot4_thymeleaf/springboot4_thymeleaf.iml" filepath="$PROJECT_DIR$/springboot4_thymeleaf/springboot4_thymeleaf.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot6_homework/springboot6_homework.iml" filepath="$PROJECT_DIR$/springboot6_homework/springboot6_homework.iml" />
     </modules>
   </component>
 </project>
