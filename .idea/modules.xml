@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/Mybatis_6Plugin/Mybatis_6Plugin.iml" filepath="$PROJECT_DIR$/Mybatis_6Plugin/Mybatis_6Plugin.iml" />
       <module fileurl="file://$PROJECT_DIR$/lagouStudyCode.iml" filepath="$PROJECT_DIR$/lagouStudyCode.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis-3-master/mybatis.iml" filepath="$PROJECT_DIR$/mybatis-3-master/mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot1_quilystart/springboot1_quilystart.iml" filepath="$PROJECT_DIR$/springboot1_quilystart/springboot1_quilystart.iml" />
       <module fileurl="file://$PROJECT_DIR$/springmvc1_reread/springmvc1_reread.iml" filepath="$PROJECT_DIR$/springmvc1_reread/springmvc1_reread.iml" />
     </modules>
   </component>
