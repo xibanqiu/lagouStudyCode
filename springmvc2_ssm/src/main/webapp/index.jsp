@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <%@ page isELIgnored="false" contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -119,5 +120,10 @@
 
 </div>
 
+=======
+<html>
+<body>
+<h2>Hello World!</h2>
+>>>>>>> origin/Springmvc
 </body>
 </html>

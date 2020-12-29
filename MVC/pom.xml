@@ -5,11 +5,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.example</groupId>
-  <artifactId>springmvc1_reread</artifactId>
+  <artifactId>MVC</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>springmvc1_reread Maven Webapp</name>
+  <name>MVC Maven Webapp</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -27,12 +27,6 @@
       <scope>test</scope>
     </dependency>
 
-    <!--引入spring webmvc的依赖-->
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-webmvc</artifactId>
-      <version>5.1.12.RELEASE</version>
-    </dependency>
 
     <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
     <dependency>
@@ -42,33 +36,6 @@
       <scope>provided</scope>
     </dependency>
 
-
-    <!--json数据交互所需jar，start-->
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-core</artifactId>
-      <version>2.9.0</version>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-databind</artifactId>
-      <version>2.9.0</version>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-annotations</artifactId>
-      <version>2.9.0</version>
-    </dependency>
-    <!--json数据交互所需jar，end-->
-
-    <!--文件上传所需坐标-->
-    <dependency>
-      <groupId>commons-fileupload</groupId>
-      <artifactId>commons-fileupload</artifactId>
-      <version>1.3.1</version>
-    </dependency>
-
-    <!--  -->
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang3</artifactId>
@@ -76,24 +43,43 @@
     </dependency>
 
 
-
   </dependencies>
-
-
 
   <build>
     <plugins>
+      <!-- 编译插件的定义编译细节 -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+
+        <configuration>
+          <source>11</source>
+          <target>11</target>
+
+          <encoding>utf-8</encoding>
+
+          <compilerArgs>
+            <arg>-parameters</arg>
+          </compilerArgs>
+        </configuration>
+      </plugin>
+
+
+
       <plugin>
         <groupId>org.apache.tomcat.maven</groupId>
         <artifactId>tomcat7-maven-plugin</artifactId>
         <version>2.2</version>
         <configuration>
-          <port>8080</port>
+          <port>8081</port>
           <path>/</path>
           <uriEncoding>UTF-8</uriEncoding>
+          <!--告诉编译器，编译的时候 记录下形参的真是名称 -->
+
+
         </configuration>
       </plugin>
     </plugins>
   </build>
-
 </project>

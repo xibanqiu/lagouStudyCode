@@ -8,7 +8,6 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Mybatis_4Annotation" />
         <module name="Mybatis_3multiTable" />
-        <module name="springboot1_quilystart" />
         <module name="Mybatis_2quickStart" />
         <module name="mybatis" />
         <module name="Mybatis_6Plugin" />
@@ -27,15 +26,7 @@
       <module name="Mybatis_4Annotation" target="1.8" />
       <module name="Mybatis_5Cache" target="1.8" />
       <module name="Mybatis_6Plugin" target="1.8" />
-      <module name="springboot1_quilystart" target="11" />
       <module name="springmvc1_reread" target="11" />
-      <module name="start" target="11" />
     </bytecodeTargetLevel>
-  </component>
-  <component name="JavacSettings">
-    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="springboot1_quilystart" options="-parameters" />
-      <module name="start" options="-parameters" />
-    </option>
   </component>
 </project>

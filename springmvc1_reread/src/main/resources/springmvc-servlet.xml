@@ -10,7 +10,7 @@
 
         <context:component-scan base-package="com.lagou" />
 
-        <mvc:annotation-driven />
+
 
     <!-- 静态资源配置方案一 -->
         <!--
@@ -19,7 +19,7 @@
             那么会把请求转有web应用 服务器（tomcat） 默认的DefaultServlet 来处理，如果不是静态资源请求，那么
             继续由Springmvc 框架处理
         -->
-        <mvc:default-servlet-handler />
+<!--        <mvc:default-servlet-handler />-->
 
 
     <!-- 静态资源配置方案二 -->
@@ -29,8 +29,8 @@
         mapping:约定的静态资源的url规则
         location:指定的静态资源的存放位置
         -->
-        <mvc:resources location="classpath:/" mapping="/resources/**"/>
-
+        <mvc:resources location="classpath:/"  mapping="/resources/**"/>
+        <mvc:resources location="/WEB-INF/js/" mapping="/js/**"/>
 
         <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
             <property name="prefix" value="/WEB-INF/jsp/" />
@@ -38,5 +38,55 @@
         </bean>
 
 
+    <!-- 这里需要添加 -->
+    <mvc:annotation-driven conversion-service="conversionServiceBean" />
+    <!-- 注册自定义的转换器 -->
+    <bean id="conversionServiceBean"
+          class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean class="com.lagou.converter.DateConverter">
+                </bean>
+            </set>
+        </property>
+    </bean>
+
+
+    <!-- 过滤器集 的 设置 -->
+    <mvc:interceptors>
+
+        <!--  单个过滤器的设置 -->
+        <mvc:interceptor>
+
+            <!--  配置当前拦截器的url的拦截规则  ，**  代表 当前目录下及其 子目录下的所有url -->
+            <mvc:mapping path="/**"/>
+            <!--  exclude-mapping  在 mapping 的基础上 排除掉医学url 拦截 -->
+<!--            <mvc:exclude-mapping path="/demo/**"/>-->
+
+            <bean class="com.lagou.interceptor.MyInterceptor1"/>
+
+        </mvc:interceptor>
+
+        <!--  单个过滤器的设置 -->
+        <mvc:interceptor>
+
+            <!--  配置当前拦截器的url的拦截规则  ，**  代表 当前目录下及其 子目录下的所有url -->
+            <mvc:mapping path="/**"/>
+            <!--  exclude-mapping  在 mapping 的基础上 排除掉医学url 拦截 -->
+            <!--            <mvc:exclude-mapping path="/demo/**"/>-->
+
+            <bean class="com.lagou.interceptor.MyInterceptor2"/>
+
+        </mvc:interceptor>
+
+    </mvc:interceptors>
+
+    <!--
+    多元素 解析器
+    id 固定为 multipartResolver
+    -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="500000"/>
+    </bean>
 
 </beans>
