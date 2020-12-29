@@ -1,5 +1,7 @@
 package com.lagou.controller;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.lagou.pojo.Article;
 import com.lagou.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -21,12 +22,10 @@ public class BlogController {
     @RequestMapping("/hello/{page}")
     public String firstPage(Model model,@PathVariable("page") String page){
 
-        List<Article> articles = articleService.selectArticle(page);
-
-        articles.forEach(System.out::println);
+        List<Article> articles = articleService.selectArticleByPage(page);
 
         model.addAttribute("articles",articles);
-
+        model.addAttribute("page",page);
 
         return "client/index";
     }

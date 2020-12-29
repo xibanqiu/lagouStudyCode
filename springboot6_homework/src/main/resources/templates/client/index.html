@@ -11,7 +11,7 @@
 
                 <div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-text">
                     <!-- 文章分类 -->
-                    <span class="blog-color"style="font-size: 15px;"><a>默认分类</a></span>
+                    <span class="blog-color"style="font-size: 15px;" th:text="'标签:'+ ${article.tags}"><a> 标签</a></span>
                     <span>&nbsp;&nbsp;&nbsp;</span>
                     <!-- 发布时间 -->
                     <span style="font-size: 15px;" th:text="'发布于 '+ ${article.created}" />
@@ -48,6 +48,16 @@
 
 </div>
 
+
+<div align="center">
+
+    <a class="btn btn-sm" th:href="@{/hello/firstPage}">首页</a>
+    <a class="btn btn-sm" th:href="@{/hello/previewsPage}">上一页</a>
+    <a class="btn btn-sm" >当前页</a>
+    <a class="btn btn-sm" th:href="@{ /hello/nextPage }">下一页</a>
+    <a class="btn btn-sm" th:href="@{/hello/lastPage}">尾页</a>
+
+</div>
 
 </body>
 <!-- 载入文章尾部页面，位置在/client文件夹下的footer模板页面，模板名称th:fragment为footer -->

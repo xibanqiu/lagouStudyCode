@@ -12,7 +12,7 @@ import java.util.List;
 public interface ArticleMapper {
 
     @Select("select * from t_article ")
-    public List<Article> selectArticleByPage(@Param("page") Integer page);
+    public List<Article> selectArticleByPages();
 
 
 }
