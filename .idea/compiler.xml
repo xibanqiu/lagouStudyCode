@@ -9,11 +9,13 @@
         <module name="Mybatis_4Annotation" />
         <module name="Mybatis_3multiTable" />
         <module name="Mybatis_2quickStart" />
+        <module name="Mytomcat1.0" />
         <module name="mybatis" />
         <module name="Mybatis_6Plugin" />
         <module name="Mybatis_1Litetest" />
         <module name="Mybatis_5Cache" />
         <module name="springmvc1_reread" />
+        <module name="Mytomcat2.0" />
         <module name="Mybatis_1Lite" />
       </profile>
     </annotationProcessing>
@@ -26,6 +28,8 @@
       <module name="Mybatis_4Annotation" target="1.8" />
       <module name="Mybatis_5Cache" target="1.8" />
       <module name="Mybatis_6Plugin" target="1.8" />
+      <module name="Mytomcat1.0" target="11" />
+      <module name="Mytomcat2.0" target="11" />
       <module name="springmvc1_reread" target="11" />
     </bytecodeTargetLevel>
   </component>
