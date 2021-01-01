@@ -11,7 +11,7 @@ public class HttpProtocolUtil {
                 "\r\n";
     }
 
-    public static String getHttpHead404(Long contentLength){
+    public static String getHttpHead404(){
 
         return "HTTP/1.1 404 Found\n"+
                 "Content-Type:text/html\n"+

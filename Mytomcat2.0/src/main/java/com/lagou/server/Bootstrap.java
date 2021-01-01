@@ -1,6 +1,9 @@
 package com.lagou.server;
 
 
+import com.lagou.pojo.Request;
+import com.lagou.pojo.Response;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.ServerSocket;
@@ -23,14 +26,10 @@ public class Bootstrap {
             // 通过输入流 获取请求信息
             InputStream inputStream = socket.getInputStream();
 
-            int count = 0;
-            while (count ==  0){
-                int available = inputStream.available();
-            }
-            byte[] bytes = new byte[count];
-            inputStream.read(bytes);
+            Request request = new Request(inputStream);
+            Response response = new Response(socket.getOutputStream());
 
-            System.out.println("=====>>>请求信息"+ new String(bytes));
+            response.outputHtml(request.getUrl());
 
             socket.close();
         }
