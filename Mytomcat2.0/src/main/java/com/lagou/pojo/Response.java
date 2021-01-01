@@ -35,7 +35,7 @@ public class Response {
         String absoluteResourcePath = StaticResourceUtil.getAbsolutePath(path);
 
         File file = new File(absoluteResourcePath);
-        if(file.exists()){
+        if(file.exists() && file.isFile()){
 
             StaticResourceUtil.outputStaticResource(new FileInputStream(file),outputStream);
         }else {
