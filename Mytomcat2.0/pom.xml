@@ -8,6 +8,24 @@
     <artifactId>Mytomcat2.0</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+
+    <dependencies>
+        <!-- dom4j -->
+        <dependency>
+            <groupId>dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>1.6.1</version>
+        </dependency>
+
+        <!--jaxen -->
+        <dependency>
+            <groupId>jaxen</groupId>
+            <artifactId>jaxen</artifactId>
+            <version>1.1.6</version>
+        </dependency>
+
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>

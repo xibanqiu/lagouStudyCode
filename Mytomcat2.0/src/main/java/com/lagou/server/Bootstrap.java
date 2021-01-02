@@ -19,6 +19,7 @@ public class Bootstrap {
      */
     public void start() throws IOException {
 
+
         ServerSocket serverSocket = new ServerSocket(port);
 
         while (true){

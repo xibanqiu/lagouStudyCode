@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/MyTomcat3.0/MyTomcat3.0.iml" filepath="$PROJECT_DIR$/MyTomcat3.0/MyTomcat3.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyTomcat4.0/MyTomcat4.0.iml" filepath="$PROJECT_DIR$/MyTomcat4.0/MyTomcat4.0.iml" />
       <module fileurl="file://$PROJECT_DIR$/Mybatis_1Lite/Mybatis_1Lite.iml" filepath="$PROJECT_DIR$/Mybatis_1Lite/Mybatis_1Lite.iml" />
       <module fileurl="file://$PROJECT_DIR$/Mybatis_1Litetest/Mybatis_1Litetest.iml" filepath="$PROJECT_DIR$/Mybatis_1Litetest/Mybatis_1Litetest.iml" />
       <module fileurl="file://$PROJECT_DIR$/Mybatis_2quickStart/Mybatis_2quickStart.iml" filepath="$PROJECT_DIR$/Mybatis_2quickStart/Mybatis_2quickStart.iml" />
