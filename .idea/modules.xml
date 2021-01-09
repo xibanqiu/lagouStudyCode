@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Mybatis_3multiTable/Mybatis3_multiTable.iml" filepath="$PROJECT_DIR$/Mybatis_3multiTable/Mybatis3_multiTable.iml" />
       <module fileurl="file://$PROJECT_DIR$/Mybatis_1Lite/Mybatis_1Lite.iml" filepath="$PROJECT_DIR$/Mybatis_1Lite/Mybatis_1Lite.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Mybatis_1Litetest/Mybatis_1Litetest.iml" filepath="$PROJECT_DIR$/Mybatis_1Litetest/Mybatis_1Litetest.iml" />
       <module fileurl="file://$PROJECT_DIR$/Mybatis_2quickStart/Mybatis_2quickStart.iml" filepath="$PROJECT_DIR$/Mybatis_2quickStart/Mybatis_2quickStart.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Mybatis_3multiTable/Mybatis_3multiTable.iml" filepath="$PROJECT_DIR$/Mybatis_3multiTable/Mybatis_3multiTable.iml" />
       <module fileurl="file://$PROJECT_DIR$/Mybatis_4Annotation/Mybatis_4Annotation.iml" filepath="$PROJECT_DIR$/Mybatis_4Annotation/Mybatis_4Annotation.iml" />
       <module fileurl="file://$PROJECT_DIR$/Mybatis_5Cache/Mybatis_5Cache.iml" filepath="$PROJECT_DIR$/Mybatis_5Cache/Mybatis_5Cache.iml" />
       <module fileurl="file://$PROJECT_DIR$/Mybatis_6Plugin/Mybatis_6Plugin.iml" filepath="$PROJECT_DIR$/Mybatis_6Plugin/Mybatis_6Plugin.iml" />

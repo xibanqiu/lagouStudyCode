@@ -5,8 +5,6 @@
       <list>
         <option value="$PROJECT_DIR$/Mybatis_2quickStart/pom.xml" />
         <option value="$PROJECT_DIR$/Mybatis_1Lite/pom.xml" />
-        <option value="$PROJECT_DIR$/Mybatis_1Litetest/pom.xml" />
-        <option value="$PROJECT_DIR$/Mybatis_3multiTable/pom.xml" />
         <option value="$PROJECT_DIR$/Mybatis_4Annotation/pom.xml" />
         <option value="$PROJECT_DIR$/Mybatis_5Cache/pom.xml" />
         <option value="$PROJECT_DIR$/Mybatis_6Plugin/pom.xml" />
