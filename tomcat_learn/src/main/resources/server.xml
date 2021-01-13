@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Server>
+    <Service>
+        <Connector port="8080"/>
+        <Engine>
+            <Host name = "localhost" appBase = "webApps">
+                <Context name = "/demo01" path = "/demo01"></Context>
+                <Context name = "/demo02" path = "/demo02"></Context>
+            </Host>
+        </Engine>
+    </Service>
+</Server>
