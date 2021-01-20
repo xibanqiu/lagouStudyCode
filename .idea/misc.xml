@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/logindemo" />
+    <file type="web" url="file://$PROJECT_DIR$/loginproject" />
     <file type="web" url="file://$PROJECT_DIR$/springmvc1_reread" />
   </component>
   <component name="MavenProjectsManager">
@@ -15,6 +17,10 @@
         <option value="$PROJECT_DIR$/Mybatis_6Plugin/pom.xml" />
         <option value="$PROJECT_DIR$/mybatis-3-master/pom.xml" />
         <option value="$PROJECT_DIR$/springmvc1_reread/pom.xml" />
+        <option value="$PROJECT_DIR$/HashDemo/pom.xml" />
+        <option value="$PROJECT_DIR$/IDWork/pom.xml" />
+        <option value="$PROJECT_DIR$/logindemo/pom.xml" />
+        <option value="$PROJECT_DIR$/loginproject/pom.xml" />
       </list>
     </option>
   </component>

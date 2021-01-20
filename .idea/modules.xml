@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/HashDemo/HashDemo.iml" filepath="$PROJECT_DIR$/HashDemo/HashDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IDWork/IDWork.iml" filepath="$PROJECT_DIR$/IDWork/IDWork.iml" />
       <module fileurl="file://$PROJECT_DIR$/Mybatis_1Lite/Mybatis_1Lite.iml" filepath="$PROJECT_DIR$/Mybatis_1Lite/Mybatis_1Lite.iml" />
       <module fileurl="file://$PROJECT_DIR$/Mybatis_1Litetest/Mybatis_1Litetest.iml" filepath="$PROJECT_DIR$/Mybatis_1Litetest/Mybatis_1Litetest.iml" />
       <module fileurl="file://$PROJECT_DIR$/Mybatis_2quickStart/Mybatis_2quickStart.iml" filepath="$PROJECT_DIR$/Mybatis_2quickStart/Mybatis_2quickStart.iml" />
@@ -10,6 +12,8 @@
       <module fileurl="file://$PROJECT_DIR$/Mybatis_5Cache/Mybatis_5Cache.iml" filepath="$PROJECT_DIR$/Mybatis_5Cache/Mybatis_5Cache.iml" />
       <module fileurl="file://$PROJECT_DIR$/Mybatis_6Plugin/Mybatis_6Plugin.iml" filepath="$PROJECT_DIR$/Mybatis_6Plugin/Mybatis_6Plugin.iml" />
       <module fileurl="file://$PROJECT_DIR$/lagouStudyCode.iml" filepath="$PROJECT_DIR$/lagouStudyCode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/logindemo/logindemo.iml" filepath="$PROJECT_DIR$/logindemo/logindemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/loginproject/loginproject.iml" filepath="$PROJECT_DIR$/loginproject/loginproject.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis-3-master/mybatis.iml" filepath="$PROJECT_DIR$/mybatis-3-master/mybatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/springmvc1_reread/springmvc1_reread.iml" filepath="$PROJECT_DIR$/springmvc1_reread/springmvc1_reread.iml" />
     </modules>

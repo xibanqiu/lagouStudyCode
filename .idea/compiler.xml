@@ -6,18 +6,26 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Mybatis_4Annotation" />
+        <module name="Mybatis_1Litetest" />
         <module name="Mybatis_3multiTable" />
+        <module name="logindemo" />
         <module name="Mybatis_2quickStart" />
         <module name="mybatis" />
+        <module name="Mybatis_4Annotation" />
+        <module name="loginproject" />
         <module name="Mybatis_6Plugin" />
-        <module name="Mybatis_1Litetest" />
         <module name="Mybatis_5Cache" />
         <module name="springmvc1_reread" />
+        <module name="HashDemo" />
         <module name="Mybatis_1Lite" />
+        <module name="IDWork" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="HashDemo" target="11" />
+      <module name="IDWork" target="11" />
+      <module name="logindemo" target="11" />
+      <module name="loginproject" target="11" />
       <module name="mybatis" target="1.8" />
       <module name="Mybatis_1Lite" target="1.8" />
       <module name="Mybatis_1Litetest" target="1.8" />
@@ -28,5 +36,10 @@
       <module name="Mybatis_6Plugin" target="1.8" />
       <module name="springmvc1_reread" target="11" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="loginproject" options="-parameters" />
+    </option>
   </component>
 </project>
