@@ -15,6 +15,11 @@
         <option value="$PROJECT_DIR$/Mybatis_6Plugin/pom.xml" />
         <option value="$PROJECT_DIR$/mybatis-3-master/pom.xml" />
         <option value="$PROJECT_DIR$/springmvc1_reread/pom.xml" />
+        <option value="$PROJECT_DIR$/BIO/pom.xml" />
+        <option value="$PROJECT_DIR$/NIO/pom.xml" />
+        <option value="$PROJECT_DIR$/RPC-common/pom.xml" />
+        <option value="$PROJECT_DIR$/RPC-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/RPC-client/pom.xml" />
       </list>
     </option>
   </component>
