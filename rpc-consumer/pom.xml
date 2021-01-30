@@ -8,6 +8,17 @@
     <artifactId>rpc-consumer</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+
+    <dependencies>
+        <dependency>
+            <groupId>com.lagou</groupId>
+            <artifactId>rpc-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+    </dependencies>
+
+
     <build>
         <plugins>
             <plugin>

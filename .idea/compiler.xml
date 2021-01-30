@@ -40,7 +40,7 @@
       <module name="RPC-common" target="11" />
       <module name="RPC-consumer" target="11" />
       <module name="rpc-consumer" target="11" />
-      <module name="rpc-provider" target="1.5" />
+      <module name="rpc-provider" target="11" />
       <module name="springmvc1_reread" target="11" />
     </bytecodeTargetLevel>
   </component>
