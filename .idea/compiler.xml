@@ -6,14 +6,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="RPC-client" />
+        <module name="Netty" />
         <module name="Mybatis_1Litetest" />
         <module name="Mybatis_6Plugin" />
         <module name="Mybatis_2quickStart" />
         <module name="RPC-common" />
         <module name="BIO" />
-        <module name="Mybatis_1Lite" />
+        <module name="RPC-client" />
         <module name="mybatis" />
+        <module name="Mybatis_1Lite" />
         <module name="RPC-consumer" />
         <module name="springmvc1_reread" />
         <module name="Mybatis_4Annotation" />
@@ -32,6 +33,7 @@
       <module name="Mybatis_4Annotation" target="1.8" />
       <module name="Mybatis_5Cache" target="1.8" />
       <module name="Mybatis_6Plugin" target="1.8" />
+      <module name="Netty" target="11" />
       <module name="NIO" target="11" />
       <module name="RPC-client" target="11" />
       <module name="RPC-common" target="11" />

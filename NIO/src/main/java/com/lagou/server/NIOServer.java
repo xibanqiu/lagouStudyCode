@@ -3,7 +3,6 @@ package com.lagou.server;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.*;
-import java.security.Key;
 import java.util.Iterator;
 import java.util.Scanner;
 
@@ -73,17 +72,6 @@ public class NIOServer extends Thread{
 
                     //5) 判断通道是否有效
                     if(key.isValid()){
-
-                        //6) 判断是否可用
-                        try {
-                            if(key.isAcceptable()){
-                                accept(key);
-                            }
-
-                        }catch (Exception e){
-                            key.cancel();
-                        }
-
 
                         //6) 判断是否可读
                         try {
