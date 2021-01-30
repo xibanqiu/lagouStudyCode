@@ -21,6 +21,8 @@
         <option value="$PROJECT_DIR$/RPC-consumer/pom.xml" />
         <option value="$PROJECT_DIR$/RPC-client/pom.xml" />
         <option value="$PROJECT_DIR$/Netty/pom.xml" />
+        <option value="$PROJECT_DIR$/rpc-common/pom.xml" />
+        <option value="$PROJECT_DIR$/rpc-provider/pom.xml" />
       </list>
     </option>
   </component>

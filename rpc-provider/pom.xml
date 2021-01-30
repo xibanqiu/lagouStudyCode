@@ -5,22 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.lagou</groupId>
-    <artifactId>RPC-client</artifactId>
+    <artifactId>rpc-provider</artifactId>
     <version>1.0-SNAPSHOT</version>
-
-    <dependencies>
-        <dependency>
-            <groupId>com.lagou</groupId>
-            <artifactId>RPC-common</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-             <dependency>
-                 <groupId>com.lagou</groupId>
-                 <artifactId>RPC-consumer</artifactId>
-                 <version>1.0-SNAPSHOT</version>
-        </dependency>
-
-    </dependencies>
 
     <build>
         <plugins>
@@ -36,5 +22,6 @@
             </plugin>
         </plugins>
     </build>
+
 
 </project>

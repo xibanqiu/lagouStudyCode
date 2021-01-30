@@ -11,7 +11,5 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="RPC-common" />
-    <orderEntry type="library" name="Maven: io.netty:netty-all:4.1.16.Final" level="project" />
   </component>
 </module>
