@@ -5,6 +5,7 @@ import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 
@@ -30,9 +31,9 @@ public class NettyServer {
                 // channel 方法指定服务器监听的通道类型
                 .channel(NioServerSocketChannel.class)
                 // 设置channel handler ,每一个客户端 连接后，给定一个监听器进行处理
-                .childHandler(new ChannelInitializer<NioServerSocketChannel>() {
+                .childHandler(new ChannelInitializer<NioSocketChannel>() {
                     @Override
-                    protected void initChannel(NioServerSocketChannel nioServerSocketChannel) throws Exception {
+                    protected void initChannel(NioSocketChannel nioServerSocketChannel) throws Exception {
 
                         // 传输通道
                         ChannelPipeline pipeline = nioServerSocketChannel.pipeline();
@@ -53,7 +54,7 @@ public class NettyServer {
                 });
 
         //bind 监听端口
-        ChannelFuture channelFuture = serverBootstrap.bind(8000).sync();
+        ChannelFuture channelFuture = serverBootstrap.bind(9999).sync();
 
         System.out.println(" tcp server start suceess");
 
