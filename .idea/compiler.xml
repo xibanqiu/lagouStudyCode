@@ -6,25 +6,31 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Netty" />
         <module name="Mybatis_1Litetest" />
-        <module name="Mybatis_6Plugin" />
+        <module name="Netty" />
+        <module name="rpc-Homework-consumer" />
+        <module name="rpc-HomeWork-common" />
         <module name="Mybatis_2quickStart" />
         <module name="rpc-provider" />
         <module name="BIO" />
+        <module name="Mybatis_6Plugin" />
+        <module name="netty-rpc-provider" />
         <module name="Mybatis_1Lite" />
         <module name="mybatis" />
+        <module name="netty-rpc-common" />
         <module name="springmvc1_reread" />
         <module name="Mybatis_4Annotation" />
         <module name="NIO" />
         <module name="Mybatis_5Cache" />
+        <module name="rpc-HomeWork-provider" />
+        <module name="netty-rpc-consumer" />
         <module name="Mybatis_3multiTable" />
         <module name="rpc-consumer" />
         <module name="rpc-common" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="BIO" target="1.5" />
+      <module name="BIO" target="11" />
       <module name="mybatis" target="11" />
       <module name="Mybatis_1Lite" target="11" />
       <module name="Mybatis_1Litetest" target="11" />
@@ -34,12 +40,19 @@
       <module name="Mybatis_5Cache" target="1.8" />
       <module name="Mybatis_6Plugin" target="1.8" />
       <module name="Netty" target="11" />
+      <module name="netty-rpc-common" target="11" />
+      <module name="netty-rpc-consumer" target="11" />
+      <module name="netty-rpc-provider" target="11" />
       <module name="NIO" target="11" />
       <module name="RPC-client" target="11" />
       <module name="rpc-common" target="11" />
       <module name="RPC-common" target="11" />
-      <module name="RPC-consumer" target="11" />
       <module name="rpc-consumer" target="11" />
+      <module name="RPC-consumer" target="11" />
+      <module name="rpc-HomeWork-common" target="11" />
+      <module name="rpc-homework-consumer" target="1.5" />
+      <module name="rpc-Homework-consumer" target="11" />
+      <module name="rpc-HomeWork-provider" target="11" />
       <module name="rpc-provider" target="11" />
       <module name="springmvc1_reread" target="11" />
     </bytecodeTargetLevel>

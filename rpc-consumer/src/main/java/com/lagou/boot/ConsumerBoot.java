@@ -1,4 +1,4 @@
-package com.lagou.com.lagou.boot;
+package com.lagou.boot;
 
 import com.lagou.client.RPCConsumer;
 import com.lagou.server.UserService;

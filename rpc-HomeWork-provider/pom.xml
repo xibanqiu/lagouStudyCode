@@ -5,19 +5,29 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.lagou</groupId>
-    <artifactId>rpc-provider</artifactId>
+    <artifactId>rpc-HomeWork-provider</artifactId>
     <version>1.0-SNAPSHOT</version>
 
 
     <dependencies>
-
         <dependency>
             <groupId>com.lagou</groupId>
-            <artifactId>rpc-common</artifactId>
+            <artifactId>rpc-HomeWork-common</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
-
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.3.2</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-autoconfigure -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+            <version>2.4.1</version>
+        </dependency>
     </dependencies>
 
     <build>
