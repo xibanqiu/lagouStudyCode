@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/lagouStudyCode.iml" filepath="$PROJECT_DIR$/lagouStudyCode.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis-3-master/mybatis.iml" filepath="$PROJECT_DIR$/mybatis-3-master/mybatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/springmvc1_reread/springmvc1_reread.iml" filepath="$PROJECT_DIR$/springmvc1_reread/springmvc1_reread.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zookeeper-demo/zookeeper-demo.iml" filepath="$PROJECT_DIR$/zookeeper-demo/zookeeper-demo.iml" />
     </modules>
   </component>
 </project>
