@@ -11,20 +11,20 @@
         <module name="rpc-Homework-consumer" />
         <module name="rpc-HomeWork-common" />
         <module name="Mybatis_2quickStart" />
+        <module name="Mybatis_3multiTable" />
         <module name="rpc-provider" />
         <module name="BIO" />
         <module name="Mybatis_6Plugin" />
         <module name="netty-rpc-provider" />
         <module name="Mybatis_1Lite" />
         <module name="mybatis" />
-        <module name="netty-rpc-common" />
         <module name="springmvc1_reread" />
         <module name="Mybatis_4Annotation" />
         <module name="NIO" />
         <module name="Mybatis_5Cache" />
         <module name="rpc-HomeWork-provider" />
         <module name="netty-rpc-consumer" />
-        <module name="Mybatis_3multiTable" />
+        <module name="netty-rpc-common" />
         <module name="rpc-consumer" />
         <module name="rpc-common" />
       </profile>
@@ -56,5 +56,10 @@
       <module name="rpc-provider" target="11" />
       <module name="springmvc1_reread" target="11" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="netty-rpc-provider" options="-parameters" />
+    </option>
   </component>
 </project>
