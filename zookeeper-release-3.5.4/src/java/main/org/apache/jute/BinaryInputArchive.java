@@ -25,6 +25,7 @@ import java.io.InputStream;
 
 /**
  *
+ *
  */
 public class BinaryInputArchive implements InputArchive {
     static public final String UNREASONBLE_LENGTH= "Unreasonable length = ";

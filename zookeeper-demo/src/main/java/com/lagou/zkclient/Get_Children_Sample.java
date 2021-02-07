@@ -12,8 +12,6 @@ public class Get_Children_Sample {
         String path = "/lg-zkClient";
         ZkClient zkClient = new ZkClient("127.0.0.1:2181", 5000);
 
-//        List<String> children = zkClient.getChildren(path);
-//        System.out.println(children);
 
         // 注册监听事件
         zkClient.subscribeChildChanges(path, new IZkChildListener() {
@@ -36,9 +34,6 @@ public class Get_Children_Sample {
         System.out.println("执行结束");
         Thread.sleep(Integer.MAX_VALUE);
 
-
-
     }
-
 
 }

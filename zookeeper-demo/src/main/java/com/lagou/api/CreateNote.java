@@ -3,7 +3,6 @@ package com.lagou.api;
 import org.apache.zookeeper.*;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.util.concurrent.CountDownLatch;
 
 public class CreateNote implements Watcher {

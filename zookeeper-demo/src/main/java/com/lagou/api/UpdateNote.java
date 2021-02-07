@@ -6,7 +6,7 @@ import org.apache.zookeeper.ZooKeeper;
 import org.apache.zookeeper.data.Stat;
 
 
-public class updateNote implements Watcher {
+public class UpdateNote implements Watcher {
 
     private static ZooKeeper zooKeeper;
 
@@ -18,7 +18,7 @@ public class updateNote implements Watcher {
          sesssionTimeOut：会话超时时间：单位毫秒
          Wather：监听器(当特定事件触发监听时，zk会通过watcher通知到客户端)
          */
-        zooKeeper = new ZooKeeper("127.0.0.1:2181",50000,new updateNote());
+        zooKeeper = new ZooKeeper("127.0.0.1:2181",50000,new UpdateNote());
 
         System.out.println(zooKeeper.getState());
 
