@@ -9,15 +9,19 @@
         <module name="Mybatis_4Annotation" />
         <module name="Mybatis_3multiTable" />
         <module name="Mybatis_2quickStart" />
+        <module name="service-api" />
         <module name="mybatis" />
         <module name="Mybatis_6Plugin" />
         <module name="Mybatis_1Litetest" />
         <module name="Mybatis_5Cache" />
         <module name="springmvc1_reread" />
+        <module name="dubbo-base" />
         <module name="Mybatis_1Lite" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="dubbo-base" target="1.5" />
+      <module name="duboo-base-annotation" target="1.5" />
       <module name="mybatis" target="1.8" />
       <module name="Mybatis_1Lite" target="1.8" />
       <module name="Mybatis_1Litetest" target="1.8" />
@@ -26,6 +30,7 @@
       <module name="Mybatis_4Annotation" target="1.8" />
       <module name="Mybatis_5Cache" target="1.8" />
       <module name="Mybatis_6Plugin" target="1.8" />
+      <module name="service-api" target="1.5" />
       <module name="springmvc1_reread" target="11" />
     </bytecodeTargetLevel>
   </component>
