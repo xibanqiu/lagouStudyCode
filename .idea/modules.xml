@@ -16,7 +16,9 @@
       <module fileurl="file://$PROJECT_DIR$/duboo-base-annotation/service-api/service-api.iml" filepath="$PROJECT_DIR$/duboo-base-annotation/service-api/service-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/dubbo-base-xml/service-api-xml/service-api-xml.iml" filepath="$PROJECT_DIR$/dubbo-base-xml/service-api-xml/service-api-xml.iml" />
       <module fileurl="file://$PROJECT_DIR$/duboo-base-annotation/service-commuser/service-commuser.iml" filepath="$PROJECT_DIR$/duboo-base-annotation/service-commuser/service-commuser.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dubbo-base-xml/service-conusumer-xml/service-conusumer-xml.iml" filepath="$PROJECT_DIR$/dubbo-base-xml/service-conusumer-xml/service-conusumer-xml.iml" />
       <module fileurl="file://$PROJECT_DIR$/duboo-base-annotation/service-provider/service-provider.iml" filepath="$PROJECT_DIR$/duboo-base-annotation/service-provider/service-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dubbo-base-xml/service-provider-xml/service-provider-xml.iml" filepath="$PROJECT_DIR$/dubbo-base-xml/service-provider-xml/service-provider-xml.iml" />
       <module fileurl="file://$PROJECT_DIR$/springmvc1_reread/springmvc1_reread.iml" filepath="$PROJECT_DIR$/springmvc1_reread/springmvc1_reread.iml" />
     </modules>
   </component>

@@ -6,6 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="service-conusumer-xml" />
+        <module name="service-provider-xml" />
         <module name="Mybatis_1Litetest" />
         <module name="Mybatis_6Plugin" />
         <module name="Mybatis_2quickStart" />
@@ -24,7 +26,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="dubbo-base" target="1.5" />
-      <module name="dubbo-base-xml" target="11" />
+      <module name="dubbo-base-xml" target="1.8" />
       <module name="duboo-base-annotation" target="1.8" />
       <module name="mybatis" target="1.8" />
       <module name="Mybatis_1Lite" target="1.8" />
@@ -35,9 +37,11 @@
       <module name="Mybatis_5Cache" target="1.8" />
       <module name="Mybatis_6Plugin" target="1.8" />
       <module name="service-api" target="1.8" />
-      <module name="service-api-xml" target="11" />
+      <module name="service-api-xml" target="1.8" />
       <module name="service-commuser" target="1.8" />
+      <module name="service-conusumer-xml" target="1.8" />
       <module name="service-provider" target="1.8" />
+      <module name="service-provider-xml" target="1.8" />
       <module name="springmvc1_reread" target="11" />
     </bytecodeTargetLevel>
   </component>

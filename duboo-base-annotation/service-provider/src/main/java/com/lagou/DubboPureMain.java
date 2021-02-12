@@ -18,7 +18,7 @@ public class DubboPureMain {
 
     @Configuration
     @EnableDubbo(scanBasePackages = "com.lagou.service.impl")
-    @PropertySource("classpath:/dubbo-provider.properties")
+    @PropertySource("dubbo-provider.properties")
     static  class  ProviderConfiguration{
         @Bean
         public RegistryConfig   registryConfig(){
