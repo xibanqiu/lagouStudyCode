@@ -11,6 +11,7 @@
         <module name="Mybatis_2quickStart" />
         <module name="mybatis" />
         <module name="Mybatis_6Plugin" />
+        <module name="datastucture" />
         <module name="Mybatis_1Litetest" />
         <module name="Mybatis_5Cache" />
         <module name="springmvc1_reread" />
@@ -18,6 +19,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="datastucture" target="1.5" />
       <module name="mybatis" target="1.8" />
       <module name="Mybatis_1Lite" target="1.8" />
       <module name="Mybatis_1Litetest" target="1.8" />
