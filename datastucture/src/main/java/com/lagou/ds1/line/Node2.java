@@ -3,7 +3,6 @@ package com.lagou.ds1.line;
 // 双链表
 public class Node2 {
 
-
     Integer id;
 
     String name;
