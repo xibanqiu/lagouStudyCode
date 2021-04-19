@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="thread" />
         <module name="Mybatis_4Annotation" />
         <module name="Mybatis_3multiTable" />
         <module name="Mybatis_2quickStart" />
@@ -27,6 +28,7 @@
       <module name="Mybatis_5Cache" target="1.8" />
       <module name="Mybatis_6Plugin" target="1.8" />
       <module name="springmvc1_reread" target="11" />
+      <module name="thread" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
