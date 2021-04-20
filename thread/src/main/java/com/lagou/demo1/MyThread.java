@@ -10,15 +10,12 @@ public class MyThread extends Thread {
     public void run() {
 
         while (true){
-
             System.out.println(Thread.currentThread().getName() + "运行了" );
-
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
         }
 
     }

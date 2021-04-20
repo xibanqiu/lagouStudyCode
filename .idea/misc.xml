@@ -16,6 +16,7 @@
         <option value="$PROJECT_DIR$/mybatis-3-master/pom.xml" />
         <option value="$PROJECT_DIR$/springmvc1_reread/pom.xml" />
         <option value="$PROJECT_DIR$/thread/pom.xml" />
+        <option value="$PROJECT_DIR$/juc/pom.xml" />
       </list>
     </option>
   </component>
